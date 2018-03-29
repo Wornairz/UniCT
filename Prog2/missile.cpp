@@ -6,7 +6,7 @@
 using namespace std;
 
 short check(short x, short y, short tempx, short tempy){
-	return abs(x-tempx)+abs(y-tempy);
+	return sqrt((pow(tempx-x,2))+(pow(tempy-y,2)));
 }
 
 int main(){
