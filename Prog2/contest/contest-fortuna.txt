@@ -1,0 +1,41 @@
+Il pericoloso gioco della ruota
+
+Nelle prime settimane di maggio aveva aperto una nuova sala Bingo nei pressi della stada comunale che porta, via mare, da Vigata a Villaseta. Il locale si trovava all'interno di un grande casermone, una bruttura architettonica in un contesto di piccole e graziose casuzze, rigorosamente abusive, costruite fronte mare. Il commissario Montalbano, che amava il mare e passava spesso dalla quella strada comunale quando andava a Montelusa, non poteva sopportare la vista di una così fatiscente costruzione.
+Da qualche tempo si era sparsa la voce in paese di un nuovo gioco d'azzardo, organizzato all'interno della sala Bingo, che aveva svuotato le tasche degli sprovveduti avventori. Lo chiamavano il gioco della ruota e anche l'agente Catarella ne era rimasto vittima la sera appresso. 
+Spinto dalla curiosità, e anche da tanticchia di antipatia nei confronti di quell'attività, il Commissario Montalbano decise di andare a fare, la sera stessa, una capatina alla sala Bingo per capire la strategia che stava dietro l'ormai tristemente famoso gioco della ruota. Se avesse trovato una strategia di risoluzione del gioco i vigatesi avrebbero potuto recuperare il denaro perso e la sala Bingo sarebbe stata presto costretta a chiudere.
+
+Specifiche
+Si aiuti il Commissario Montalbano a trovare la soluzione al gioco della ruota. La ruota è costituita da 2N caselle numerate con valori diversi (non disposti in ordine). Dato che il numero delle caselle è sempre pari è possibile isolare i numeri appartenenti alla prima metà della ruota (quella di destra) e i numeri appartenenti alla seconda metà della ruota (quella di sinistra). Il gioco consiste nell'individuare, dopo ogni rotazione della ruota (svolta sempre in senso orario), il più piccolo numero appartenente alla prima metà ed il più grande numero appartenente alla seconda metà. L'ampiezza di ciascuna rotazione è noto a priori. 
+Si fornisca un programma in grado di identificare la coppia di valori (minimo - massimo) dopo ogni rotazione della ruota.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga. Ogni riga del file di input è formata da 2+2N+Q elementi. Il primo elemento è il valore intero N, il quale rappresenta metà delle caselle presenti nella ruota della fortuna. Seguono 2N numeri interi che rappresentano, nell'ordine dato, i valori contenuti nella caselle della ruota. I valori partono dalla casella in alto e procedono in senso orario.
+Successivamente viene fornito il valore intero Q, il quale rappresenta il numero di rotazioni che vengono fatte fare alla ruota. Seguono Q valori interi, i quali rappresentano, rispettivamente e nell'ordine dato, le ampiezze delle rotazioni della ruota.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene una lista di Q coppie di valori interi, i quali identificano rispettivamente, il più piccolo valore presente nella prima metà della ruota, e il più grande valore presente nella seconda metà della ruota. Entrambi i valori sono calcolati al termine di ciascuna delle Q rotazioni della ruota.
+
+Nota
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 4 task, ed il corrispondente file di output.
+
+input.txt:
+2 2 1 5 3 3 1 2 1
+3 2 9 8 3 5 5 3 2 1 8
+10 8 10 4 9 1 3 5 9 4 10 1 6 3 3 8 4 8 10 1 3 8 10 10 8 1 4 10 9 7 
+14 10 12 11 1 14 9 6 8 2 8 12 14 1 8 1 10 6 5 12 7 10 10 6 1 9 1 11 3 7 7 8 13 1 6 11 2 
+
+output.txt
+2 5 1 3 1 5
+2 9 3 9 3 5
+1 10 1 10 1 10 1 10 1 10 1 10 1 10 1 10 
+1 14 1 14 1 12 1 12 1 14 1 14 1 14 
+
+Spiegazione dell'esempio
+Nel primo caso d'esempio la ruota contiene 4 caselle la cui configurazione iniziale (partendo dall'alto e procedendo in senso orario) è [2 1 5 3]. Vengono segnalate 3 rotazioni, che portano la ruota alle seguenti configurazioni:
+- rotazione di 1 passo: [3 2 1 5]. Il minimo della prima metà è 2 ed il più grande della seconda metà è 5;
+- rotazione di 2 passi: [1 5 3 2]. Il minimo della prima metà è 1 ed il più grande della seconda metà è 3;
+- rotazione di 1 passo: [2 1 5 3]. Il minimo della prima metà è 1 ed il più grande della seconda metà è 5.
+10/10
+

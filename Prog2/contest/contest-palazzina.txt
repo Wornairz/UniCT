@@ -1,0 +1,39 @@
+La palazzina in fiamme
+
+Ormai da qualche mesata Enzuccio Spedale, proprietario della gelateria più rinomata di Marinella, il Blue Moon, una delle più antiche e frequentate del comune di Vigata e di tutta la zona costiera di Montelusa, aveva principiato a non pagare il pizzo. Dopo i primi timidi avvertimenti, la mafia aveva deciso di mandare ad Enzuccio un segnale che non poteva passare inosservato. La notte del 13 di aprile la sua bottega, un grande scagno a tre luci al piano terra di una bella palazzina ristrutturata, era stata fatta esplodere. L'esplosione aveva provocato un pericoloso incendio in tutta la palazzina. I pompieri e i soccorsi tardavano ad arrivare.
+Il commissario Montalbano, impossibilitato ad entrare nella palazzina in fiamme, era arrinisciuto a salire sulla terrazza di una palazzina adiacente, distante solo un tiro di schioppo, e aveva costruito un ponteggio di emergenza con vecchi ferri e qualche scala di legno. Utilizzando il ponteggio ed una sua vecchia corda di sicurezza era intenzionato a mettere in salvo tutti i superstiti presenti nella palazzina nel più breve tempo possibile.
+
+Specifiche
+Si aiuti il commissario Montalbano a mettere in salvo tutti i superstiti presenti nella palazzina nel minor tempo possibile. Si supponga di conoscere il numero di superstiti e il tempo necessario ad ognuno di loro per attraversare il ponteggio, sulla base delle ferite riportate nell'incendio. Il commissario ha dotato i superstiti di un'unica corda di sicurezza, grazie alla quale essi possono attraversare il ponteggio. Inoltre tale ponteggio, a causa delle sue precarie condizioni, può sostenere solo due persone alla volta. Ciò implica che quando due di loro lo hanno attraversato mettendosi in salvo, uno di loro deve ritornare indietro con la corda per permettere agli altri superstiti rimasti di utilizzarla. Quando due persone attraversano il ponteggio, procedendo insieme, dovranno andare alla velocità del più lento.
+Calcolare il tempo minimo necessario affinché tutti i superstiti riescano ad attraversare il ponteggio.
+
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga. Nello specifico ogni riga del file di input è formata da N+1 numeri interi. Il primo elemento rappresenta il valore N (il numero di superstiti rimasti nella palazzina). Seguono gli N valori che identificano le velocità con le quali i superstiti sono in grado di attraversare il ponteggio.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un unico valore intero, rappresentante il tempo minimo necessario per permettere ai superstiti di attraversare il ponteggio.
+
+Note
+Il numero N è sempre compreso tra 1 e 500.
+Le velocità di percorrenza del ponteggio sono dei numeri interi compresi tra 1 e 1000.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+4 7 1 5 2 
+5 3 4 9 2 10 
+6 11 2 13 6 13 17 
+
+output.txt
+14
+27
+64
+
+Spiegazione dell'esempio
+Nel primo esempio mostrato sono presenti 4 superstiti, la cui velocità di attraversamento del ponteggio sono 7, 1, 5 e 2, rispettivamente. La soluzione migliore prevede che per primi attraversino i superstiti con velocità 2 e 1 (impiegando 2 sec.), in seguito il supersite con velocità 1 torna indietro con la corda (impiegando 1 sec.).
+Successivamente è conveniente che attraversino i superstiti con velocità 7 e 5 (impiegando 7 sec.), in seguito il supersite con velocità 2 torna indietro con la corda (impiegando 2 sec.).
+Infine i superstiti con velocità 1 e 2, ultimi rimasti nella palazzina, attraversano il ponteggio (impiegando 2 sec.)
+Per l'intera sequenza necessaria al passaggio abbiamo bisogno di 2+1+7+2+2 = 14 secondi.
+

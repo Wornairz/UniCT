@@ -1,0 +1,37 @@
+Lavori in corso a Fela
+
+Fela era un piccolo comune, di 10 mila anime, sulla strada che collega Vigata a Montelusa. Quando il commissario Montalbano era costretto a recarsi a Montelusa, dal questore, preferisce percorrere la vecchia strada che via mare, porta al centro della città, più lunga ma di certo più piacevole. Tanto più che il comune di Fela, a detta del commissario, aveva una viabilità contorta ed un traffico assufficante, nonostante l'esiguo numero di mezzi che vi circolano. Inoltre da qualche mese erano iniziati dei lavori di mantenimento del manto stradale che avevano bloccato l'itera circolazione cittadina. Ogni volta che il commissario trasiva a Fela, c'erano nuove strade interrotte, sensi di marcia canciati, divieti al transito, e continui lavori in corso.
+Quando ebbe la notizia di doversi recare al commissariato di Fela per una importante questione legata ad un caso che lo aveva coinvolto in passato, dovette istruirsi per bene sul piano della viabilità cittadina per evitare di rimane imbottigliato in quel labirinto. 
+
+Specifiche
+Si aiuti il commissario Montalbano a raggiungere il commissariato di Fela nel più breve tempo possibile, avendo a disposizione lo stradario del comune di Fela e conoscendo i piani dei lavori stradali previsti dal suo collega addetto alla viabilità.
+Nello specifico, si supponga che lo stradario di Fela sia rappresentato da una mappa composta da N punti di intersezione ed M strade che uniscono coppie di punti della mappa. I nodi sono etichettati da 0 a N-1, dove il punto 0 rappresenta il commissariato di Vigata, mentre il punto N-1 rappresenta il commissariato di Fela. Le stade sono percorribili in entrambe le direzioni. Tuttavia il piano dei lavori stradali prevede che ciascuna strada subisca diversi interventi di manutenzione, alcuni dei quali già in corso. Ad ogni strada è quindi associata una coppia di valori (i,f), dove "i" rappresenta il momento in cui terminano i lavori attualmente in corso ed "f" rappresenta il tempo in cui i lavori riprendono nuovamente. Dato che durante i lavori la strada non è percorribile, essa è disponibile solo dal tempo "i" al tempo "f".
+Si fornisca un programma in grado di calcolare il tempo minimo necessario per permettere a Montalbano di andare dal punto etichettato con 0 (il commissariato di Vigata) al punto etichettato con N-1 (il commissariato di Fela).
+
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da 2+4M elementi. Il primo elemento è un intero che rappresenta il numero N dei punti di intersezione della mappa. Il secondo elemento è un intero che rappresenta il numero M delle strade che uniscono alcuni dei punti di intersezione della mappa. Seguono M gruppi di 4 elementi (p,d,i,f) che fornisco le informazioni relative alle M strade della mappa. Nello specifico rappresentano: il punto di partenza (p) e il punto di arrivo (d) della strada, il tempo (i) in cui finisco i lavori sulla strada e il tempo (f) in cui questi lavori ricominciano. Dal tempo i al tempo f quella strada non sarà quindi percorribile.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un valore intero, rappresentante il numero minimo di unità di tempo necessarie per raggiungere il punto N-1 (il commissariato di Fela) a partire dal punto 0 (il commissariato di Vigata).
+
+Note
+Il numero N è un valore intero compresi tra 10 e 100.
+Il numero M è un valore intero compresi tra 10 e 5000.
+Per ogni strada, descritta dai dati (p,d,i,f) si ha sempre iSe il problema non ha soluzione la risposta dovrà essere -1.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 2 task, ed il corrispondente file di output.
+
+input.txt:
+4 5 0 2 0 5 0 1 1 3 0 3 3 6 3 2 3 8 3 1 0 10
+3 2 0 1 3 5 1 2 2 4
+
+output.txt
+3
+-1
+
+Spiegazione dell'esempio
+Nel primo caso di esempio il modo più veloce per andare dal commissariato di Vigata (il punto 0) alla commissariato di Fela (il punto 3) consiste nell'aspettare 1 minuto, poi prendere la stada che collega 0 e 1 (ci mette 1 minuto) e poi prendere immediatamente la strada che collega 1 e 3 (anche qui ci mette 1 minuto), impiegando in totale 3 minuti per arrivare a destinazione.
+
+Nel secondo caso di esempio non è possibile andare dal punto 0 al punto 2. Infatti Montalbano dovrebbe necessariamente passare per il punto 1, perché non c’è mai una strada che collega direttamente 0 e 2. Al tempo 3 è disponibile una strada per andare da 0 a 1, dunque Montalbano può trovarsi nel punto 1 al più, dopo 4 minuti, e in quell’istante iniziano i lavori nella strada che collega i punti 1 e 2, impedendogli quindi di raggiungere la destinazione.

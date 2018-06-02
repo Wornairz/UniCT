@@ -1,0 +1,54 @@
+La grotta di Ganzaria
+
+Le vacanze del primo di maggio, passate dal Commissario Montalbano insieme a Livia su Monte Aiona in Liguria, gli erano costate care. Non solo perché lui, che era uomo di mare, aveva patito il freddo a più di mille metri di altitudine, ma anche perché durante una scarpinata aveva malamente sbattuto la gamba procurandosi una dolorosa contusione. La gamba offesa non gli permetteva di muoversi come più preferiva e, soprattutto, non gli permetteva di salire scaloni, scale e strade in pendenza. Il 3 maggio, giorno della festa di San Bartolomeo, il patrono di Vigata, fu costretto a taliare l'acchianata del feretro, fino alla Chiesa Madre, assittato sul paracarro vicino alla piazza.
+La mattina del quattro di maggio ricevette però una telefonata anonima che lo costrinse all'operatività. In base a ciò che gli venne riferito dall'anonimo interlocutore, l'intera refurtiva di una rapina svoltasi la notte appresso, durante i festeggiamenti di San Bartolomeo, era stata nascosta presso la Grotta di Ganzaria, un'antica insenatura nella roccia di origine vulcanica. Il commissario, nonostante la sua evidente difficoltà nel muoversi, decise di andare a controllare di persona durante la notte. Il suo obbiettivo era quello di raggiungere in auto il punto più vicino possibile alla Grotta di Ganzaria e, in seguito, raggiungere la stessa procedendo in salita per il più breve tratto possibile.
+
+Specifiche
+Si aiuti il commissario Montalbano a trovare la strada più comoda che conduca alla grotta di Ganzaria. In particolare si realizzi un programma che prenda in input un file contenente la mappa dell'altimetria della zona in cui si trova la grotta di Ganzaria e calcoli il cammino che Montalbano possa seguire affinché riesca ad arrivare a destinazione facendo il minor numero possibile di passi in salita.
+A causa della gamba offesa, Montalbano può muoversi solo in orizzontale e in verticale ma non può muoversi in diagonale. Inoltre non può camminare molto in salita, mentre la discesa non gli procura alcun fastidio.
+Si supponga che la mappa possa essere rappresentata da una griglia rettangolare di dimensione NxM e che per ogni punto della mappa (identificato da una cella della griglia) sia indicata la relativa altimetria. Partendo da un determinato punto A della mappa, in cui si suppone che Montalbano abbia posteggiato la sua auto, si identifichi un cammino che porti al punto B, in cui si trova la grotta di Ganzaria, percorrendo la minor numero possibile possibile di passi in salita.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da 6+NxM elementi. I primi due interi di ogni riga sono rispettivamente il valore N (il numero di righe della mappa) e il valore M (il numero di colonne della mappa). I seguenti 4 numeri sono le coordinate (x e y, rispettivamente) dei punti A e B. Seguono gli NxM valori altimetrici della griglia.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un valore intero, rappresentante il dislivello minimo in salita che Montalbano deve percorrere per andara dal punto A della mappa al punto B.
+
+Note
+I numeri N ed M sono due interi sempre compresi tra 1 e 100.
+Il punto A ed il punto B si trovano in due celle distinte non esterne alla griglia.
+Si è interessati al dislivello in salita e quindi non ha importanza quanti passi in discesa vengono percorsi.
+Montalbano non può muoversi in diagonale ma solo in orizzontale e verticale.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 2 task, ed il corrispondente file di output.
+
+input.txt:
+4 3 2 0 3 1 3 1 3 0 1 0 1 1 0 3 2 1
+5 3 2 0 4 1 3 1 4 4 0 4 0 2 3 0 4 0 1 3 1 
+
+output.txt
+1 
+2
+
+Spiegazione dell'esempio
+Nel primo caso d'esempio la matrice che rappresenta l'altimetria della mappa è la seguente:
+
+3 1 3 
+0 1 0 
+1 1 0 
+3 2 1
+
+Il punto A ha coordinate (2,0), mentre il punto B ha coordinate (3,1). La soluzione che permette a Montalbano di arrivare a B percorrendo il minor dislivello possibile in salita è quella che, partendo da (2,0), si sposta nel punto (2,1) mantenendosi sulla stessa altitudine, e infine si sposta sul punto (3,1), con un dislivello di 1. 
+
+Nel secondo caso d'esempio la matrice che rappresenta l'altimetria della mappa è la seguente:
+
+3 1 1 
+0 0 1 
+0 2 2 
+4 4 1 
+1 0 0 
+
+Il punto A ha coordinate (2,0), mentre il punto B ha coordinate (4,1). La soluzione che permette a Montalbano di arrivare al punto B percorrendo il minor dislivello possibile in salita è quella che, partendo da (2,0), si sposta nel punto (2,1), con un dislivello di 2, e in seguito vada in discesa sui punti (2,2), (3,2), (4,2) e (4,1). 
+10/10
+

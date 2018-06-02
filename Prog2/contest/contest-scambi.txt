@@ -1,0 +1,35 @@
+La giostra degli scambi
+
+La jornata era accominciata storta per il commissario Montalbano. Quella matina, intervenuto per sedare una rissa sulla spiaggia di Marinella, aveva dato un cazzotto all’uomo sbagliato. Poco dopo, scambiato per uno degli aggressori, viene fermato dai carabinieri. Infine anche Adelina, in casa sua, aveva scambiato un galantuomo per un ladro e gli aveva sbattuto una padella in testa. Quella era proprio la giornata degli scambi e Montalbano non aveva intenzione di aggiungercene degli altri.
+Quando l'ispettore Fazio portò nell'ufficio di Montalbano il verbale che Catarella aveva scritto poco prima, raccogliendo la testimonianza di una povera picciotta a cui avevano arrubato la borsetta, Montalbano si accorse che nel verbale, scritto di prescia, una parola era stata scritta con tutte le lettere scambiate. La giostra degli scambi non sarebbe più finita.
+
+Specifiche
+Aiuta il commissario Montalbano a correggere il verbale redatto da Catarella, individuando tutte le posizioni nel testo in cui una determinata parola è stata scritta con dei caratteri adiacenti (0 o più) scambiati di posizione. Si assuma che solo caratteri adiacenti possano essere scambiati di posizione e che un carattere possa essere scambiato solo una volta, per ogni occorrenza nel testo.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga. Ciascuna riga del fle di input contiene due stringhe, ovvero la parola da cercare e il testo del verbale di Catarella.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga del fle di output contiene la lista delle posizioni iniziali nel testo in cui la parola cercata occorre, anche con la presenza di scambi tra lettere adiacenti.
+
+
+Note
+Le lunghezze delle stringhe non sono indicate all'interno del file di input.
+Non viene fornita alcuna limitazione alla lunghezza di una stringa.
+Le posizioni dei caratteri all'interno delle stringhe sono indicizzate a partire da 0.
+Le due stringhe non contengono spazi o caratteri di separazione.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente un task, ed il corrispondente file di output.
+
+input.txt:
+questore il_uqetsore_di_Montelusa_riceve_la_lettera_del_vicequsetoer_e_avvisa_il_vicequestore_stesso_della_presenza_di_alcuni_criminali_operanti_nel_comune 
+
+output.txt
+3 51 76 
+
+Spiegazione dell'esempio
+La parola "questore" appare all'interno del testo tre volte. La prima volta alla posizione 3, la parola "uqetsore" in cui sono presenti 3 scambi. La seconda volta alla posizione 51, la parola "qusetoer", in cui sono presenti 2 scambi. L'ultima volta alla posizione 75, la parola "questore" in cui non sono presenti scambi.
+
+10/10
+

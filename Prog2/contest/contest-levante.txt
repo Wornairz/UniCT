@@ -1,0 +1,48 @@
+Il vecchio molo di levante
+
+Quando il travaglio in commissariato non lo occupava assai o quando non aveva gana di correre dietro alle scartoffie che lo occupavano dalla matina alla sira, Salvatore Montalbano usava farsi una lunga passeggiata al molo di levante per assittarsi sopra una bitta a taliare il traffico portuale. E così aveva avuto modo di vedere, anna via anno, sempre meno navi trasìre e attraccare per carricare e scarricare, finché non restò che il postale per Lampedusa a credere che il coma del porto non fosse irreversibile. Le grandi navi portacontainers, le gigantesche petroliere, oramà passavano al largo, sfilavano a filo d'orizzonte.
+Fu così che un bel giorno Montalbano si addunò di una strano via vai di piccole barche lungo i canali del molo di levante che, approfittando del cambio di marea, sfruttavano le correnti per trasportare merce, di certo in modo illegale pinsò lui, dal porto vecchio fino alla tonnara. Decise di trasìre dentro la questione ed aspettare la barca al punto di attracco. Per arrinesciri nella cosa avrebbe dovuto arrivare prima che la barca raggiungesse la vecchia tonnara spinta dalla corrente.
+
+Specifiche
+Si aiuti il commissario Montalbano a calcolare il tempo necessario alla barca per raggiungere la vecchia tonnara, partendo dal vecchio porto del molo di levante.
+La barca si sposta lungo i canali, seguendo la corrente. Ogni canale è quindi percorribile in una sola direzione, nota a Montalbano. Quando però arriva l’alta marea il verso della corrente di ogni canale si inverte. 
+Data la mappa degli N punti di intersezione e degli M canali che li collegano, con le correnti che inizialmente ne fluiscono, si realizzi un programma che permetta di determinare il minimo tempo necessario per spostarsi in barca dal punto 0 (il porto) al punto N − 1 (la vecchia tonnara), tenendo presente che per attraversare un canale (cosa possibile solo nel senso della corrente) si impiega esattamente 1 minuto.
+Inoltre Montalbano sa che dopo T minuti arriva l’alta marea e quindi la direzione di percorrenza di tutti i canali si inverte. Si tenga presente che nei punti di intersezione di due o più canali è possibile fermarsi per un numero di minuti a piacere.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da 3+2M elementi. Il primo elemento è un intero che rappresenta il numero N dei punti di intersezione. Il secondo elemento è un intero che rappresenta il numero M dei canali presenti nel porto. il terzo elemento è un intero che rappresenta il numero T di minuti che devono trascorrere prima dell'arrivo della marea. Seguono M coppie di valori (S ed E) che rappresentano il punto di partenza e il punto di arrivo, rispettivamente, di ciascuno degli M canali.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un valore intero, rappresentante il numero minimo di minuti necessari per raggiungere il punto N-1 a partire dal punto 0.
+
+Note
+I numeri N, M e T sono valori interi sempre compresi tra 1 e 100000.
+Se il problema non ha soluzione la risposta dovrà essere -1.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+9 10 5 0 1 1 4 4 2 2 0 2 3 4 5 7 5 6 7 6 3 8 6
+5 11 2 3 1 3 4 4 1 2 0 0 3 2 3 3 0 1 3 3 2 2 4 2 1 
+6 18 3 4 1 4 5 2 5 1 3 0 3 1 4 0 2 5 3 5 2 3 0 1 2 2 1 5 4 4 3 1 0 0 4 2 3 3 4 
+
+output.txt
+7
+2
+2
+
+Spiegazione dell'esempio
+Nel primo caso di esempio, per andare dal punto 0 al punto N-1 = 8, sapendo che l’alta
+marea arriverà al minuto T = 5, si può seguire il seguente percorso (che richiede 7 minuti):
+ da t = 0 a t = 1: 0 -> 1
+ da t = 1 a t = 2: 1 -> 4
+ da t = 2 a t = 3: 4 -> 2
+ da t = 3 a t = 4: 2 -> 3
+ da t = 4 a t = 5: si rimane fermi in 3
+ in t = 5: alta marea
+ da t = 5 a t = 6: 3 -> 6
+ da t = 6 a t = 7: 6 -> 8
+10/10
+Richiedi Input
+

@@ -1,0 +1,44 @@
+L'archivio di Vigata
+
+Il commissariato di Vigata, sebbene fosse manchevole in personale e in sovvenzioni statali, era dotato di un grande archivio storico, che conservava i fascicoli di tutte le indagini svolte nel comune di Vigata, a partire dai primi anni del novecento. Dato che il commissariato era manchevole anche in personale di pulizia, nell'archivio storico si era accumulata una montagna di provolazzo (termine che in siciliano sta ad indicare l'accumulo di polvere e di sporcizia, e non un particolare tipo di formaggio). Per tale ragione, ogni volta che il commissario Montalbano, omo che pativa l'allergia, trasiva in quella stanza, principiava a starnutire per diverse ore.
+Aveva quindi da tempo preso l'abitudine di mandare il suo agente Catarella a consultare l'archivio storico del commissariato. Non si era addunato, tuttavia, che Catarella prendeva i fascicoli a tre alla volta e in seguito li riponeva scanciati nell'archivio, che stava a dire nell'ordine inverso. Quando a Montalbano venne a servire l'importante fascicolo dell'assassinio Cirrinciò, accaduto nei primi mesi del 2003, si rese conto che l'ordine dei fascicoli nell'archivio er astato quasi completamente stravolto. Ricostruire la sequenza degli scanci di Catarella non sarebbe stato facile.
+
+Specifiche
+Si aiuti il commissario Montalbano a capire qual'è il numero minimo di consultazioni che Catarella ha dovuto fare affinché l'archivio del commissariato abbia raggiunto l'attuale sistemazione dei fascicoli.
+Si fornisca quindi un programma in grado di prendere in input la disposizione degli N fascicoli che compongono l'archivio del commissariato di Vigata allo stato attuale e sia in grado di calcolare il numero minimo di consultazioni effettuate da Catarella. Si tenga presente che Catarella fa le sue consultazioni sulla base della posizione dei fascicoli da consultare. Per ogni consultazione prende tre fascicoli alla volta (i-1,i,i+1) e alla fine li ripone, sbadatamente, in ordine inverso.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da N+1 elementi. Il primo elemento è un valore intero che rappresenta il numero N di fascicoli presenti nell'archivio del commissariato. Segue la sequenza di N valori interi, che rappresenta l'ordine attuale dei fascicoli disposti nell'archivio. Tale sequenza è sempre una permutazione dei numeri da 0 a N-1.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un unico valore intero, rappresentante il numero minimo di consultazioni che Catarella ha dovuto fare per ottenere, alla fine, la sequenza di fascicoli fornita in input.
+
+Note
+Il numero N è sempre un intero compresi tra 1 e 10000.
+La numerazione dei fascicoli parte da 0.
+Le consultazioni di Catarella si riferiscono sempre ai fascicoli (i-1,i,i+1) per i che va da 1 a N-2.
+Si suppone che all'inizio delle consultazioni tutti i fascicoli siano in ordine, da 0 a N-1.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+10 0 1 2 3 8 5 4 7 6 9 
+11 4 1 10 9 0 7 8 3 2 5 6 
+12 0 9 2 5 4 3 8 1 10 7 6 11 
+
+output.txt
+2
+13
+9
+
+Spiegazione dell'esempio
+Nel primo caso d'esempio l'archivio del commissariato di Vigata contiene 10 fascicoli (numerati da 0 a 9). La sequenza minima di consultazioni di Catarella che ha portato alla configurazione data in input è la seguente:
+
+0 1 2 3 4 5 6 7 8 9 (configurazione iniziale)
+0 1 2 3 4 5 8 7 6 9 (consultazione alla posizione i=7)
+0 1 2 3 8 5 4 7 6 9 (consultazione alla posizione i=5)
+0 1 2 3 8 7 4 5 6 9 (consultazione alla posizione i=6)
+
+10/10
+

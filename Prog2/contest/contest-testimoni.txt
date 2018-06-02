@@ -1,0 +1,56 @@
+La lista dei testimoni
+
+Luciano Cirrinciò era uno degli omini più ricchi di Vigata. Aveva iniziato a travagliare come muratore quando era ancora picciotto, ma era presto arrinisciuto a farsi strada nel settore dell'edilizia. Prima capo manovale, poi capo cantiere e, all'età di 20 anni, aveva già una propia ditta di costruzioni. L'anno appresso aveva acconosciuto la nipote di Don Balduccio Sinagra. I due picciotti si erano sposati dopo due anni. 
+Dopo il matrimonio, bastò poco che la ditta di Cirrinciò divenne la più grossa azienda edile del comune, assicurandosi appalti pubblici e privati. Dopo una decina d'anni Luciano Cirrinciò possedeva la più grande villa residenziale di tutta Marinella. Un casermone di quattro piani che dominava la collina, appena fuori paese, con tanto di muro di cinta e giardino all'inglese.
+Probabilmente si era fatto troppi nemici tra i suoi colleghi, o forse aveva fatto un torto a qualche appaltatore. Così successe che, durante i festeggiamenti del suo cinquantesimo compleanno, ai quali era stata invitata mezza Vigata, Luciano Cirrinciò venne ammazzato sotto gli occhi di quasi tutti gli invitati, con un solo colpo di pistola. Tuttavia non fu possibile identificare subito l'assassino. 
+Per il commissario Montalbano, al quale il Cirrinciò non stava affatto simpatico, si preparava una lunga lista di interrogatori da svolgersi il giorno appresso. I testimoni dell'ammazzatina erano tanti ed ognuno di loro aveva dato disponibilità ad essere interrogato in un preciso orario della giornata. Organizzare tutti i colloqui non sarebbe stata cosa facile, tanto più che era meglio che i testimoni non si incontrassero tra di loro
+
+Specifiche
+Si aiuti il commissario Montalbano ad organizzare gli N interrogatori dei testimoni dell'omicidio di Luciano Cirrinciò. Ogni testimone ha dato la disponibilità ad essere interrogato in un determinato intervallo di ore della giornata. Il commissario Montalbano vuole interrogare tutti i testimoni, dando appuntamento a ciascuno di loro in un determinato momento della giornata, all'interno della loro disponibilità oraria, ma in modo che sia ridotta al massimo la possibilità che due testimoni si possano incontrare e quindi influenzarsi a vicenda. A tal fine dovrà essere più grande possibile la distanza minima tra due interrogatori consecutivi.
+Si fornisca quindi un programma C++ che prenda in input un file di testo contenente le informazioni sulle disponibilità di orario fornite dai testimoni e fornisca in output gli orari in cui fissare l'appuntamento per ciascun testimone.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da 2*N+1 elementi. Il primo elemento è un intero che rappresenta il numero N di testimoni che Montalbano dovrà interrogare. Seguono N coppie di interi (i,f) che rappresentano l'orario di inizio (i) e l'orario di fine (d) della disponibilità di ciascun testimone. L'interrogatorio dovrà quindi avvenire in un orario compreso tra i e d (estremi compresi).
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene tanti valori interi quanti sono i testimoni interrogati da Montalbano. I valori sono dei numeri interi e corrispondono agli orari in cui Montalbano decide di interrogare i testimoni in modo da massimizzare la distanza minima tra due interrogatori consecutivi. Gli orari sono stampati nel file di output in ordine crescente. 
+
+Note
+Il numero N è un valore intero sempre compreso tra 1 e 2000.
+La distanza tra due interrogatori si misura sempre in ore, con un valore intero.
+Nel caso di due possibili soluzioni equivalenti, t e t+1, per un determinato interrogatorio, si predilige sempre l'orario più piccolo, ovvero t.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+5 7 12 17 21 10 13 0 4 11 16 
+6 18 23 0 7 17 25 23 32 24 31 3 12 
+7 1 8 4 12 23 31 16 21 41 47 0 7 6 14 
+
+output.txt
+0 7 11 15 19 
+0 4 17 21 25 29 
+0 4 8 12 16 23 41 
+
+Spiegazione dell'esempio
+Nel primo caso di esempio mostrato, il commissario Montalbano dovrà interrogare, in 24 ore, 5 testimoni, i quali hanno dato disponibilità nelle seguenti fasce orarie:
+
+testimone 1: dalle 7 alle 12
+testimone 2: dalle 17 alle 21
+testimone 3: dalle 10 alle 13
+testimone 4: dalle 0 alle 4
+testimone 5: dalle 11 alle 16
+
+La sequenza di interrogatori che massimizza la distanza minima tra due interrogatori consecutivi prevede che gli interrogatori vengano svolti nei seguenti orari:
+
+alle ore 0: interrogatorio del testimone 4
+alle ore 7: interrogatorio del testimone 1
+alle ore 11: interrogatorio del testimone 3
+alle ore 15: interrogatorio del testimone 5
+alle ore 19: interrogatorio del testimone 2
+
+La distanza minima è pari a 4 ore.
+
+10/10
+

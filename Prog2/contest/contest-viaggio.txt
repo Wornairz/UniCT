@@ -1,0 +1,55 @@
+I compagni di viaggio
+
+Il commissario Salvo Montalbano arrivò alla stazione di Palermo ch'era d'umore nìvuro. Il suo malostare nasceva dal fatto che, venuto troppo tardinavamente a conoscenza di un doppio sciopero d'aerei e di navi, per andare a Roma non aveva trovato che un posto a sedere in uno scompartimento di seconda classe. Il che veniva a significare, in paroli povere, un intero viaggio da passare con degli sconosciuti dintra ad uno spazio così assufficante che una cella d'isolamento certo era più comoda. Inoltre a Montalbano in treno non gli era mai arrinisciuto di toccare sonno, magari ingozzandosi di sonniferi fino ai limiti della lavanda gastrica.
+Quello che Montalbano aveva notato, e che più gli portava fastidio, era l'abitudine dei siciliani di assittarisi nella prima poltrona vacante che trovavano sul treno, macari se avevano un posto prenotato. Quando, malauguratamente, poi si apprisinta il viaggiatore che ha prenotato quel posto, allora il siciliano si scusa, si alza, e va ad occupare, finalmente, il posto a lui riservato.
+Chissà a quanti bei balletti, pinsava Montalbano, avrebbe dovuto assistere prima di arrivare a destinazione.
+
+Specifiche
+Si aiuti il commissario Montalbano a calcolare il numero di volte in cui un qualsiasi passeggero del treno e costretto a scusarsi, alzarsi e cambiare posto, durante tutto il viaggio in treno.
+I posti a sedere sul treno sono numerati da 1 a N. Quando un passeggero sale per la prima volta sul treno occupa il primo posto che trova libero. Se però incontra prima il suo posto riservato allora lo occupa, eventualmente chiedendo in modo gentile a chi lo occupa indebitamente di alzarsi. Quando ad un passeggero viene chiesto di alzarsi, egli va ad occupare il posto a lui riservato (e non il primo posto vuoto).
+Montalbano ha preso nota di tutte le salite e le discese fatte sul treno da quando questo è partito. Inoltre ha tenuto nota del posto riservato a ciascun passeggero salito o sceso dal treno. Si realizzi un programma in grado di calcolare il numero di volte in cui un qualsiasi passeggero è stato costretto a scusarsi, alzarsi e cambiare posto. 
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da 2Q+2 elementi. Il primo elemento è un intero che rappresenta il numero N di posti a sedere sul treno. Il secondo elemento è un intero che rappresenta il numero Q di azioni (salita e discesa) sul treno. Seguono Q coppie di valori (A R) in cui a è un carattere ('b' oppure 'l') che identifica l'azione svolta sul treno ('b' sta per salita mentre 'l' sta per discesa), mentre R è il posto a sedere riservato per il passeggero che svolge l'azione.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un valore intero, rappresentante il numero di volte in cui un qualsiasi passeggero è stato costretto a scusarsi e cambiare di posto.
+
+Note
+I numeri N e Q sono valori interi sempre compresi tra 1 e 100000.
+
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+3 3 b 1 b 2 b 0
+4 6 b 1 b 2 b 0 l 0 b 3 b 0
+16 13 b 9 b 15 b 1 b 5 b 13 b 11 b 6 b 10 b 2 b 4 b 7 l 15 b 3 
+
+output.txt
+2
+3
+6
+
+Spiegazione dell'esempio
+Nel primo caso d'esempio tre persone sono salite sul treno nell'ordine seguente:
+A >> ___ ==> A__
+B >> A__ ==> AB_
+C >> AB_ ==> CB_ (A)
+A -> CB_ ==> CA_ (B)
+B -> CA_ ==> CAB
+
+Nel secondo caso d'esempio, 5 persone sono salite, e una ha lasciato il treno:
+A >> ____ ==> A___
+B >> A___ ==> AB__
+C -> AB__ ==> CB__ (A)
+A -> CB__ ==> CA__ (B)
+B -> CA__ ==> CAB_
+CAB_ ==> _AB_ ~> C
+D >> _AB_ ==> DAB_
+E -> DAB_ ==> EAB_ (D)
+D -> EAB_ ==> EABD
+10/10
+Richiedi Input
+

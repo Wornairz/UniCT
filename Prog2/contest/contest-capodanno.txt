@@ -1,0 +1,48 @@
+Il giorno di Capodanno
+
+Il primo a cominciare la litania fu, il 27 dicembre, il Questore. 
+- Montalbano, lei naturalmente la giornata di Capodanno la passerà con la sua Livia, vero? -
+No, non l'avrebbe passata con la sua Livia, la giornata di Capodanno. C'era stata tra loro due una terribile azzuffatina, di quelle perigliose, che cominciano con la frase "Cerchiamo di ragionare con calma" e finiscono inevitabilmente a schifìo. E così Montalbano se ne sarebbe rimasto a Vigata mentre Livia se ne sarebbe andata a Viareggio con amici dell'ufficio. Il Questore notò che qualcosa non marciava e fu pronto ad evitare a Montalbano un'imbarazzata risposta.
+- Perché altrimenti saremo felici di averla a casa nostra! -
+Puntualmente la litania si ripresentò poco dopo in commissariato, dove il suo vice Mimì Augello, che aveva intuito l'azzuffatina con Livia, l'aveva invitato a passare alcune ore in una rumorosa casa di amici. Quel giorno anche Fazio, Gallo e persino Catarella, lo invitarono per il giorno di capodanno a passare poche ore in loro compagnia. Sarà che la storia dell'azzuffatina con Livia aveva fatto il giro del paese e nessuno avava gana di lasciarlo solo.
+Infine, tornato a casa a Marinella, trovò sul tavolino della cucina un biglietto della sua cammarera Adelina, la quale lo invitava a pranzo per il giorno di capodanno. Avrebbe fatto gli arancini. Gesù, gli arancini di Adelina! Li aveva assaggiati solo una volta: un ricordo che sicuramente gli era trasuto nel Dna, nel patrimonio genetico.
+Di passare la giornata a casa non se ne parlava. Decise quindi che avrebbe accettato il maggior numero di inviti, in modo da rimanere lontano da casa il più possibile, ma non avrebbe mai voluto rinunciare agli arancini di Adelina.
+
+Specifiche
+Aiuta il commissario Montalbano a pianificare il suo giorno di Capodanno individuando il numero di inviti che il Commissario dovrebbe accettare per poter passare fuori casa, in compagnia dei suoi amici, il maggior numero di ore possibile. Nello specifico si scriva un programma che, presi in input gli orari relativi agli N inviti che ha ricevuto, sia in grado di calcolare il numero minimo di ore che è costretto a passare a casa. Si faccia in modo che Montalbano possa accettare l'invito di Adelina. Montalbano non può partecipare a due inviti che siano fissati in due orari che hanno un'intersezione non vuota.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da N+2 elementi. Il primo elemento è un intero che rappresenta il numero N di inviti che Montalbano ha ricevuto per la giornata di Capodanno. Il secondo elemento è un intero che rappresenta il numero T di ore che Montalbano ha a disposizione. Seguono N coppie di interi (t,d) che rappresentano l'orario di inizio dell'invito (t) e la sua durata (d). L'invito di Adelina è sempre il primo della lista e dovrà sempre essere accettato.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un valore intero, rappresentante il numero minimo di ore che Montalbano è costretto a stare in casa selezionando adeguatamente gli inviti da accettare.
+
+Note
+Il numero N è un valore intero sempre compreso tra 1 e 100.
+Se un'evento inizia all'ora t e ha una durata di d ore allora terminerà esattamente all'ora t+d. Montalbano potrà quindi partecipare ad un'altro invito il cui tempo di inizio è fissato per le ore t+d.
+Qualsiasi invito termina in un tempo minore o uguale a T.
+
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+5 24 7 5 17 4 10 3 0 4 11 5 
+6 25 3 2 0 4 0 5 12 5 13 4 14 1 
+7 26 22 3 11 1 1 2 0 4 15 3 14 4 3 4 
+
+output.txt
+11
+18
+12
+
+Spiegazione dell'esempio
+Nel primo caso d'esempio Montalbano ha ricevuto 5 inviti per il giorno di Capodanno e ha a disposizione 24 ore di tempo. La soluzione che permette a Montalbano di passare fuori casa il maggior numero di ore prevede che lui scelga di accettare i seguenti inviti (in questi è compreso l'invito di Adelina che si avrà inizio alle 7 e durerà 5 ore):
+- Dalle 0 alla 4 (4 ore)
+- Dalle 7 alle 12 (5 ore)
+- Dalle 17 alle 21 (4 ore)
+Tutti gli altri inviti sono purtroppo incompatibili con quelli selezionati.
+Montalbano starà fuori 4+5+4=13 ore, rimanendo in casa le 24-13 = 11 ore rimanenti
+
+10/10
+

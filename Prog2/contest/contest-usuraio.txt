@@ -1,0 +1,36 @@
+Caccia all'usuraio
+
+La nottata era proprio tinta, botte di vento arraggiate si alternavano a rapide passate d'acqua tanto malintenzionate che parevano volessero infilzare i tetti. Montalbano si era coricato da poco ma non arrinisciva a prendere sonno, non solo per il malo tempo, ma anche perché arripinsava alle informazioni che aveva avuto su Tanino Bracceri.
+Tanino Bracceri era un cinquantino di Vigata che possedeva svariate officine meccaniche nella città. Ma era soprattutto un usuraio osceno, che si diceva si facesse pagare qualche volta in natura, picciliddri e picciliddre, il sesso non aveva importanza, disgraziati figli delle sue vittime. Montalbano non era mai arrinisciuto a metterci sopra le mani.
+Questa volta però aveva ottenuto l'elenco dei numeri civici di tutte le officine e di tutti gli scagni in possesso di Tanino Bracceri. Sebbene il tempo a disposizione fosse poco sarebbe stato possibile durante la notte perquisire un certo numero di locali. Con tanticchia di fortuna sarebbe macari riuscito a catturare Tanino Bracceri.
+
+Specifiche
+Si aiuti il commissario Montalbano a perquisire un determinato numero di locali in possesso di Tanino Bracceri. Si supponga di possedere la lista degli N numeri civici in cui si trovano i locali di Bracceri, e si supponga sia K il numero massimo di locali che Montalbano può perquisire nel corso della nottata. Per massimizzare le operazioni Montalbano deve scegliere dalla sua lista i K locali consecutivi (ovvero i cui numeri civici sono consecutivi) la cui distanza sia minima (ovvero la differenza tra l'ultimo numero civico e il primo numero civico sia minima). 
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da N+2 interi. I primi due interi di ogni riga sono rispettivamente il valore N (il numero di locali da perquisire) e il numero K (il numero di locali che Montalbano può perquisire). Seguono gli N numeri civici in cui si trovano i locali di Tanino Bracceri. La lista dei numeri civici non è ordinata.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un valore intero, rappresentante la minor distanza possibile dei numeri civici per un insieme di K locali consecutivi.
+
+Note
+Il numero N è sempre compreso tra 1 e 1000.
+Il numero K è sempre compreso tra 1 ed N.
+La lista dei numeri civici dati in input non è ordinata.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+9 3 67 90 22 79 95 89 76 24 65 99
+6 6 492 702 10 16 738 267
+12 9 945 956 741 861 377 358 724 533 870 818 749 597
+
+output.txt
+6
+728
+359
+
+Spiegazione dell'esempio
+Nell’esempio Tanino Bracceri possiede 9 locali e Montalbano ne può perquisire solo 3. I 3 locali, i cui numeri civici sono consecutivi, che minimizzano la distanza tra loro sono quelli che si trovano ai numeri 90, 95 e 89, la cui distanza totale è 6. 
+

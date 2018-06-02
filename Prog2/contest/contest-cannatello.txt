@@ -1,0 +1,39 @@
+La strada per Cannatello
+
+Ogni seconda domenica d'aprile Nicolò Zito, uno dei pochi amici del commissario Montalbano, sua megliere Taninè e il loro figlio mascòlo Francesco, raprivano ufficialmente la loro casa di campagna a Cannatello. Ed era diventata tradizione che il primo ospite fosse Salvo Montalbano.
+Per andarci il commissario affrontava trazzere, mulattiere, polverosi viottoli che gli imbiancavano la macchina, invece di prendere la comoda scorrimento veloce che l'avrebbe portato a due chilometri da Cannatello. Approfittava dell'occasione per ricrearsi una Sicilia sparita, dura e aspra, una riarsa distesa giallo paglia, interrotta di tanto in tanto dai dadi bianchi delle casuzze dei contadini.
+Approfittava dell'occasione anche per accattare una guantiera gigante di cannoli alla ricotta, di cui Francesco andava ghiotto, per condividerli con la famiglia di Nicolò e con il picciriddro. La scelta più dura era quella di decidere dove accattare la guantiera di cannoli. Le pasticcerie, lungo la strada per Cannatello, erano assai e una più rinomata dell'altra. Avrebbe di certo scelto quella che gli avrebbe permesso di non fare troppo tardi per il pranzo da Nicolò.
+
+Specifiche
+Si aiuti il commissario Montalbano a raggiungere la casa di Nicolò a Cannatello nel più breve tempo possibile, avendo a disposizione lo stradario del comune di Vigata.
+Nello specifico, si supponga che lo stradario di Vigata sia rappresentato da una mappa composta da N punti di intersezione ed M strade che uniscono coppie di punti della mappa. I nodi sono etichettati da 1 a N, dove il punto 1 rappresenta la casa di Montalbano a Marinella, mentre il punto N rappresenta la casa di Nicolò a Cannatello. Le stade sono percorribili in entrambe le direzioni. Montalbano conosce anche in quali punti della mappa sono localizzate le K pasticcerie in cui potrebbe passare per comprare la guantiera di cannoli.
+Si fornisca un programma in grado di calcolare il tempo minimo necessario a Montalbano per andare dal punto etichettato con 1 (la casa di Marinella) al punto etichettato con N (la casa di Nicolò), passando per almeno una delle K pasticcerie.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga. Ciascuna riga è formata da 3+2M elementi. Il primo elemento è un intero che rappresenta il numero N dei punti di intersezione della mappa. Il secondo elemento è un intero che rappresenta il numero M delle strade che uniscono alcuni dei punti di intersezione della mappa. il terzo elemento è un intero che rappresenta il numero K pasticcerie presenti nella mappa. Seguono M coppie di valori (s, d) che rappresentano il punto di partenza (s) e il punto di arrivo (d), rispettivamente, di ciascuna delle M strade della città.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un unico valore intero, rappresentante il numero minimo di minuti necessari per raggiungere il punto N (la casa di Nicolò a Cannatello) a partire dal punto 1 (la casa di Montalbano a Marinella).
+
+Note
+Il numero N è un valore intero compresi tra 10 e 1000.
+Il numero M è un valore intero compresi tra 10 e 500000.
+Il numero K è un valore intero minore di N
+Se il problema non ha soluzione la risposta dovrà essere -1.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 2 task, ed il corrispondente file di output.
+
+input.txt:
+7 10 3 3 6 2 1 2 2 5 7 3 4 6 3 6 6 7 7 5 1 4 3 1 2 3 
+9 13 3 3 6 5 2 5 9 2 7 1 6 3 9 3 1 8 2 6 6 5 7 9 2 8 4 7 4 5 8 9
+
+output.txt
+2
+4
+
+Spiegazione dell'esempio
+Nel primo caso di esempio la mappa presenta 7 nodi e dieci strade. Inoltre in tre dei nodi della mappa (3, 6 e 2) è presente una pasticceria. A Montalbano conviene andare dal punto 1 al punto 3 (impiegando un minuto), comprare la guantiera di cannoli, e poi ripartire, raggiungendo la casa di Nicolò al punto 7 (impiegando un altro minuto).
+
+Nel secondo caso di esempio la mappa presenta 9 nodi, 13 strade e 3 pasticcerie (3, 6 e 5)
+A Montalbano conviene andare dal punto 1 al punto 3 (1->7->9->3, in 3 minuti), e poi dal punto 3 tornare a casa di Nicolò al punto 9 (3->9), impiegando un altro minuto.

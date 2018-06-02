@@ -1,0 +1,34 @@
+Nella mente del professore
+
+Il commissario si girava e rigirava sotto il linzolo; la storia che il prof. Antonio Alletta gli aveva contato il giorno prima in commissariato non lo aveva fatto persuaso per nulla. In base alla ricostruzione fornita dal professore il suo amico e compagno di scola Alfo Cosentino, proprietario a Vigata di cinque gioiellerie, era stato ammazzato perchè da alcuni mesi aveva principiato a non pagare il pizzo. Il commissario era invece venuto a conoscenza di un'importante contratto tra Cosentino e l'Alletta su cui i due non si erano potuti mettere d'accordo. Purtroppo il commissario non era riuscito a ritrovare il contratto firmato dal professore e che avrebbe fornito un valido movente per il delitto.
+Ad un tratto Salvo Montalbano sgriddò gli occhi e si susì di scatto dal letto. Un pensiero gli balenò per la mente. Un colpo di genio. Forse il contratto era stato nascosto in una delle tante casseforti che la vittima possedeva nella sua villa di Donnafugata. Dopo tre quarti d'ora che aveva pigliato la strata per Montelusa arrivò alla villa di Cosentino. Si mise a frugare come un ladro o un furfante. Finalmente all'interno di un cassetto della scrivania del gioielliere trovò un foglio con l'elenco delle casseforti e, a lato di ognuna, un promemoria parziale per la combinazione.
+Neanche la scientifca lo avrebbe potuto aiutare, eppure quelle casseforti andavano aperte!
+
+Specifiche
+Si aiuti il commissario Montalbano ad individuare le possibili combinazioni delle casseforti del gioielliere Alfo Cosentino e ad incastrare il professore Alletta. In particolare si realizzi un programma C++ che prenda in input un fle di testo contenente, per ogni cassaforte del gioielliere, l'insieme dei codici che formano la combinazione ed un promemoria parziale della combinazione esatta, e fornisca in output tutte le possibili combinazioni che soddisfano il promemoria. Le combinazioni di ogni cassaforte dovranno essere stampate in un fle di output in ordine lessicografco.
+
+Dati di input
+Il file di input è composto da 100 righe, una per ogni task. Ogni riga del file di input contiene due N+2 elementi, che descrivono le possibili combinazioni di una cassaforte. Il primo elemento è il numero N che indica da quante cifre è composta la combinazione. Segue l'insieme delle N cifre che compongono la combinazione. Le cifre sono dei numeri interi compresi tra 0 e 9. Le cifre contenute nell'insieme devono essere tutte utilizzate per la combinazione, per cui la lunghezza della combinazione coincide con la cardinalità N dell'insieme fornito. Una cifra non può apparire più di una volta nel suddetto insieme.
+L'ultimo elemento della riga rappresenta il promemoria della combinazione esatta. Tale promemoria consiste in simboli wild-card (*) e simboli numerici. Una combinazione che rispetta il promemoria può contenere una qualsiasi cifra (tra quelle nell'insieme fornito) nelle posizioni occupate dai wild-card, e i medesimi simboli contenuti nel promemoria, in tutte le posizioni non occupate dai wild-card.
+
+Dati di output
+Il file di output è composto da 100 righe, una per ogni task presente nel file di input. Ogni riga del fle di output contiene la lista di tutte le possibili combinazioni che rispettano il promemoria ordinate in ordine lessicografco.
+
+Note
+Il numero N è sempre compreso tra 2 e 10.
+Il numero di wild-card è sempre compreso tra 0 e N
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+6 8 9 2 4 0 7 78*2**
+6 6 3 0 5 9 1 19***6
+5 5 9 0 2 8 *08*9
+
+output.txt
+780249 780294 784209 784290 789204 789240 
+190356 190536 193056 193506 195036 195306
+20859 50829
+
+

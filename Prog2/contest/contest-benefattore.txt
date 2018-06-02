@@ -1,0 +1,36 @@
+Il benefattore
+
+Erano passati solo tre giorni dalla rapina all'ipermercato di Montelusa, ma nonostante questo il questore di Vigata aveva voluto chiudere velocemente le indagini. Il commissario Montalbano non si capacitava del perchè di tutta questa prescia. Le sue indagini infatti lo avevano fatto persuaso che dietro la vicenda si nascondesse qualcosa di più grosso di una semplice rapina condotta dalla solita banda di quartiere.
+La telefonata anonima ricevuta nella sua casa di Marinella quella sera confermò le sue impressioni. Secondo l'anonimo interlocutore, il furgone contenente tutta la refurtiva della rapina era stato abbandonato in contrada Cacioppo, vicino la masseria dell'avvocato Rizzo. Le richieste erano chiare: la vicenda doveva rimanere chiusa e la refurtiva sarebbe stata distrutta.
+Quando il commissario arrivò in contrada Cacippo, ormai a notte fonda, trovò il furgone abbandonato contenente centinaia di casse. Era vero che la vicenda era chiusa, ma prima che la refurtiva fosse distrutta era intenzionato portare via con se il maggior numero possibile di casse e restituirle ai legittimi proprietari. Per fare questo aveva a disposizione solo il suo vecchio ma capace furgone.
+
+Specifiche
+Si aiuti il commissario Montalbano a recuperare buona parte della refurtiva fornendo un programma C++ che prenda in input un file di testo contenente le informazioni sulle casse contenute all'interno del furgone, e restituisca in output il numero massimo di casse, ed il relativo peso, che il commissario è in grado di trasportare utilizzando il proprio mezzo. 
+Nel caso in cui più soluzioni fossero possibili (aventi il medesimo numero di casse) si prediliga la soluzione che abbia un peso complessivo inferiore.
+
+Dati di input
+L'input è costituito da 10 righe, una per ogni task. Il primo valore di ogni riga del file di input è un valore decimale che rappresenta il massimo peso che il commissario Montalbano può portare con il suo furgone. Il secondo valore rappresenta il numero N di casse facenti parte della refurtiva. Segue la sequenza dei pesi delle N casse, ognuno dei quali è un valore decimale (con una sola cifra dopo la virgola) compreso tra 1.0 e 9.9, espressi in Kg.
+
+Dati di output
+Il file di output è composto da dieci righe, una per ogni task presente nel file di input.
+Ogni riga del file di output contiene il numero di casse che il commissario riuscirà a portare con se, seguito dal peso del carico complessivo delle casse trasportate.
+
+Note
+Il numero N è sempre compreso tra 1 e 1000.
+Il peso di ogni cassa è sempre un valore decimale ad una singola cifra decimale, compreso tra 1.0 e 9.9.
+Il massimo carico del furgone di Montalbano è una valore decimale ad un'unica cifra decimale, compreso tra 10.0 e 999.9
+Valori la cui unica cifra decimale è pari a 0 dovranno essere espressi attraverso un valore intero. Ad esempio il valore 4.0 viene indicato dal numero intero 4.
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 2 task, ed il corrispondente file di output.
+
+input.txt:
+11.4 10 1.3 3.5 2.5 4.1 9.3 8 1.6 5.7 3.4 2.7
+5.2 5 1 2.1 3.1 1.8 1.6
+
+output.txt
+4 8.1
+3 4.4
+
+Spiegazione dell'esempio
+Nel primo caso di esempio mostrato, il commissario Montalbano ha a disposizione un furgone che può sopportare una peso massimo di 11.4 Kg e dovrà scegliere tra 10 possibili casse componenti la refurtiva. La scelta migliore è quella di portare le 4 casse di peso, rispettivamente, 2.7, 1.3, 2.5 e 1.6, il cui peso complessivo è pari a 8.1. Una soluzione alternativa sarebbe stata quella composta dalle quattro casse di peso, 2.7, 1.3, 2.5 e 3.4, il cui peso complessivo sarebbe stato pari a 9.9, superiore alla precedente soluzione.

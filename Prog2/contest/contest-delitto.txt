@@ -1,0 +1,34 @@
+Sfida per un delitto
+
+Dopo mesi di laboriosa ricerca le indagini del commissario Montalbano sull'efferato delitto consumatosi la notte di ferragosto al lungomare di Marinella, si stringono attorno a due principali sospettati: l'Ing.Pino Arcidiacono detto il Brancata, per il suo portamento da capomafia; e il geometra Minuzzo Giarratana, detto il Carcannazzu per il suo raccapricciante aspetto funereo. Entrambi hanno un forte movente.
+Un pizzino di carta ritrovato nella cantina del Brancata sembra però essere la chiave per incastrare uno dei due sospettati. Una frase scritta a penna attira l'attenzione del commissario: “chi perde più partite dovrà farlo...” firmato dal Carcannazzu.
+Accanto il pizzino un foglio di carta con una lunga sequenza di mosse al gioco ZeroPer. Forse quel foglio di carta nasconde il nome dell'assassino.
+
+Specifiche
+Si aiuti il Commissario Montalbano a risolvere il suo caso fornendo un programma C++ che prenda in input il file contenente la sequenza di mosse al gioco ZeroPer (conosciuto anche come TicTacToe) ed individui il giocatore che ha perso più partite. Si supponga che la prima mossa di ogni nuova partita venga fatta sempre dal Brancata.
+Si consideri la scacchiera del gioco ZeroPer come una matrice 3x3 con indice iniziale pari a 0.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga. Ciascuna riga del fle di input contiene un valore intero, N, che rappresenta il numero di partite a ZeroPer, seguito dalla sequenza di mosse delle N partite. Ogni mossa è costituita da una coppia di coordinate divise da uno virgola e racchiuse tra parentesi tonde. Le coordinate identificano la casella in cui il giocatore posiziona il suo simbolo. Due mosse distinte sono separate da uno spazio (il numero di mosse per ogni riga non è indicato a priori). Non è presente alcuna separazione per distinguere le mosse di due partite diverse: dopo la mossa che identifca la fne di una partita segue la mossa di inizio della partita successiva.
+
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga del fle di output contiene due valori, ovvero il numero di partite vinte dal Brancata, seguito dal numero di partite vinte dal Carcannazzu.
+
+
+Note
+N è un valore intero sempre compreso tra 1 e 500
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 2 task, ed il corrispondente file di output.
+
+input.txt:
+1 (0,2) (0,0) (2,0) (2,2) (1,0) (2,1) (1,1)
+2 (2,0) (1,2) (2,2) (1,0) (1,1) (2,1) (0,0) (1,1) (1,2) (0,0) (2,2) (0,1) (2,1) (0,2)
+
+output.txt
+1 0
+2 0
+
+Spiegazione dell'esempio
+Nel primo esempio il Brancata posiziona il suo simbolo nelle caselle (0,2), (2,0), (1,0) e (1,1). Il Carcannazzu occupa invece le caselle (0,0), (2,2) e (2,1). Il Brancata vince la partita poiché allinea tre simboli sulla seconda diagonale: (0,2), (1,1) e (2,0).

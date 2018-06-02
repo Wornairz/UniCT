@@ -1,0 +1,40 @@
+Tocco d'artista
+
+Alberto Larussa era un cinquantenne, molto ricco, da tent'anni paralitico per una caduta da cavallo. Non era mai uscito dalle mura della sua città natale, Ragòna. Lettore appassionato, possedeva una biblioteca di oltre diecimila volumi. Dopo la caduta da cavallo, del tutto casualmente, aveva scoperto la sua vera vocazione: quella di orafo. Ma un orafo del tutto particolare. Utilizzava solo materiali poveri, fil di ferro, di rame, pietruzze di vetro di vario colore per costruire finissimi cofanetti. Ma il disegno di questi cofanetti era sempre di straordinaria eleganza d'invenzione, tale da farne dei veri e propri oggetti d'arte. Per lavorare meglio aveva trasformato il suo scantinato in un laboratorio attrezzatissimo. Dove si era ammazzato senza lasciare una qualsiasi spiegazione.
+Il commissario Montalbano ci restò male. Amico amico di Alberto Larussa non era stato, ma ogni tanto andava a trovarlo, dietro invito, nella sua casa di Ragòna e non mancava occasione di pigliare in prestito qualche libro dalla vastissima biblioteca che l'altro aveva. L'ultimo libro che aveva preso in prestito da Larussa era una libro di Potocki, intitolato "Manoscritto trovato a Saragozza". Mantalabno pinsò che anche Potocki, che oltre ad essere uno scrittore era un fabbricatore di cofanetti, si era suicidato dopo essere riuscito a costruire 10 cofanetti che potevano essere inseriti l'uno dentro l'altro. A Salvo Montalbano venne subito in mente l'idea che, forse, macari Larussa aveva avuto la stessa pinsata di ammazzarsi come aveva fatto Potocki.
+
+Specifiche
+Aiuta il commissario Montalbano a capire se Alberto Larussa si è suicidato dopo aver costruito 10 cofanetti che possono essere inseriti l'uno dentro l'altro, come aveva fatto Potocki. Nello specifico si scriva un programma di C++, prese in input le dimensioni dei cofanetti rinvenuti da Montalbano nello scantinato di Larussa, sia in grado di calcolare il sottoinsieme più numeroso di tali cofanetti che possono essere inseriti l'uno dentro l'altro.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga, formata da 3*N+1 elementi. Il primo elemento è un intero che rappresenta il numero N di cofanetti che Montalbano trova nello scantinato di Alberto Larussa. Seguono le N triple di interi (una tripla per ogni cofanetto) che rappresentano la lunghezza, la larghezza e la profondità di ciascun cofanetto.
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene un valore intero, rappresentante la dimensione del sottoinsieme più numeroso di cofanetti che possono essere inseriti, in sequenza, l'uno dentro l'altro.
+
+Note
+Il numero N è un valore intero sempre compreso tra 1 e 1000.
+Le tre dimensioni dei cofanetti, espresse in millimetri, sono dei valori interi sempre compresi tra 1 e 3000.
+Un cofanetto di dimensioni (A x B x C) può essere inserito dentro un cofanetto di dimensioni (D x E x F) solo se A<D, B<E e C<F.
+
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+5 14 24 6 1 21 13 13 1 6 9 14 2 3 9 6 
+6 9 8 28 4 22 15 24 18 16 4 21 17 8 9 9 1 8 10 
+6 29 26 19 6 8 2 19 23 14 11 2 2 10 10 17 7 12 6
+
+output.txt
+2
+2
+4
+
+Spiegazione dell'esempio
+Nel primo caso d'esempio sono rinvenuti 5 cofanetti. L'insieme più numeroso di cofanetti che possono essere inseriti l'uno dentro l'altro è composto dai 2 cofanetti (in ordine crescente di grandezza): (9 x 14 x 2) --> (14 x 24 x 6)
+
+Nel terzo caso d'esempio sono rinvenuti 6 cofanetti. L'insieme più numeroso di cofanetti che possono essere inseriti l'uno dentro l'altro è composto dai 4 cofanetti (in ordine crescente di grandezza): (6 x 8 x 2) --> (7 x 12 x 6) --> (19 x 23 x 14) --> (29 x 26 x 19)
+
+10/10
+

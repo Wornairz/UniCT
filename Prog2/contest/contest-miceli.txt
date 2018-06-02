@@ -1,0 +1,40 @@
+Le monete di Aldelfo Miceli
+
+Adelfo Miceli era un Vigatese adottato. Arrivato in paisi verso gli anni 90, aveva preso moglie e aveva cresciuto quattro picciriddri. I primi anni erano iniziati malamente. Svelto com'era nei conti e con le mani, aveva cominciato a travagliare come latro e truffatore al mercato di Vigata, arrubbando sia ai venditori che ai passanti. 
+Tra Adelfo Miceli e il Commissario Montalbano, che lo aveva messo al fresco un paio di volte per denunce di poco conto, era principiata una strana amicizia. Adelfo Miceli era infatti un uomo intelligente e istruito, che arrubbava più per esigenza che per vocazione, e questo il commissario lo aveva intuito.
+Uscito dal carzaro, Salvo Montalbano, che era persuaso delle ritrovate buone intenzioni del Miceli, aveva convinto il suo amico a lavorare come cassiere al Bar Fortuna, uno dei più frequentati locali in attività sul molo di levante. Per la gratitudine nei confronti del Commissario, il Miceli non arrubbò più nemmeno un centesimo. Anzi, grazie alla sua abilità nei conti, ci prese gusto nel tornare il resto esatto ai clienti del bar con una velocità ed una precisione impressionante. Non sbagliava mai e non sprecava nemmeno una moneta.
+
+Specifiche
+Si aiuti Adelfo Miceli a restituire il resto ai clienti del bar utilizzando il numero possibile di monete. Nell specifico si fornisca un programma che sia in grado di restituire il resto R avendo a disposizione solo N tagli diversi di monete (si supponga che siano presenti tantissime monete per ogni determinato taglio). Il programma dovrà individuare l'insieme minimo di monete la cui somma dia esattamente un resto pari a R.
+
+Dati di input
+L’input è suddiviso in 100 task, uno per ogni riga. Ogni riga è formata da 2+N elementi. I primi due elementi sono due valori interi, N ed R, i quali rappresentano, rispettivamente, il numero di tagli di monete che si hanno a disposizione e il resto complessivo da dare. Segue la sequenza di N valori interi che rappresentano i tagli di monete a disposizione. Tale sequenza non è ordinata. 
+
+Dati di output
+L’output dovrà essere formato da 100 righe, una per ogni task. Ogni riga contiene la lista delle monete che dovranno essere selezionate per poter fornire esattamente il resto R. La lista delle monete deve essere fornita in ordine crescente rispetto al taglio.
+
+Note
+N è compreso tra 1 e 60;
+R è sempre minore di 3000;
+E' possibile selezionare più volte una moneta con lo stesso taglio;
+Nel caso di due soluzioni alternative si preferisce quella che utilizza il tagli più piccoli di monete, ovvero quella che lessicograficamente risulta essere la più piccola
+
+
+Esempio
+Il seguente esempio presenta un file di input, contenente 3 task, ed il corrispondente file di output.
+
+input.txt:
+5 27 5 7 2 13 6
+6 19 10 8 6 5 2 4
+6 10 9 13 2 3 15 11
+
+output.txt
+7 7 13 
+4 5 10
+2 2 3 3
+
+
+Spiegazione dell'esempio
+Nel primo caso d'esempio vengono forniti 5 tagli diversi di monete e si richiede di restituire un resto pari a 27 euro. Le soluzioni per ottenere questa cifra con i tagli a disposizione sono diverse. Ad esempio 6+7+5+2+5+2 = 27. Tuttavia la soluzione che include il numero minimo di monete è 7+7+13 = 27
+
+Nel secondo caso di esempio vengono forniti 6 tagli diversi di monete e si richiede di restituire un resto pari a 19 euro. In questo caso le soluzioni che minimizzano il numero di monete sono due: 4+5+10 = 19 e 5+6+8 = 19. Tuttavia la prima è la soluzione fornita in output poiché è lassicograficamente più piccola della seconda.
