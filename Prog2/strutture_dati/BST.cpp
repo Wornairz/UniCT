@@ -76,7 +76,7 @@ class Nodo
 template <class T>
 class Albero
 {
-  public:
+public:
     Albero()
     {
         root = NULL;
@@ -103,13 +103,16 @@ class Albero
         visitaInOrder(p);
         cout << endl;
     }
-    Albero *cancellaNodo(T valore)
+    Albero *cancella(T valore)
     {
         Nodo<T> *nodo = search(valore);
         if (nodo != NULL)
             return cancellaNodo(nodo);
     }
-    private:
+    int getAltezza(){
+        return calcolaAltezza(root);
+    }
+private:
     Nodo<T> *root;
     void visitaInOrder(Nodo<T> *p)
     {
@@ -144,23 +147,38 @@ class Albero
     }
     Albero *cancellaNodo(Nodo<T> *nodo)
     {
+        //if ed elseif -> massimo 1 figlio
         if (nodo->getFSX() == NULL) //se non ha figlio sinistro, trapiantiamo con il destro indipendetemente se sia NULL o meno
-            trapianta(nodo, nodo->getFDX());
-        else if (nodo->getFDX() == NULL) //se non ha figlio destro, come sopra ma con il figlio sinistro
-            trapianta(nodo, nodo->getFSX());
+            trapianta(nodo->getFDX(), nodo);
+        else if (nodo->getFDX() == NULL) //se non ha figlio destro, come sopra ma con il figlio sinistro 
+            trapianta(nodo->getFSX(), nodo);
         else
-        {
-            Nodo<T> *succ = successore(nodo);
-            if (succ->getPadre()->getFDX() == succ)
-                succ->getPadre()->setFDX(NULL);
-            else
-                succ->getPadre()->setFSX(NULL);
+        { //2 figli
+            Nodo<T> *succ = successore(nodo); //sarà il minimo del sottoalbero destro di nodo
+            //troviamo il successore e lo togliamo dalla sua posizione originale
+            if(succ->getPadre()!=nodo){
+                trapianta(succ->getFDX(), succ);
+                nodo->getFDX()->setPadre(succ);
+                succ->setFDX(nodo->getFDX());
+            }
+            trapianta(succ, nodo);
+            nodo->getFSX()->setPadre(succ);
             succ->setFSX(nodo->getFSX());
-            succ->setFDX(nodo->getFDX());
-            trapianta(nodo, succ);
+            
         }
         delete nodo;
         return this;
+    }
+    int calcolaAltezza(Nodo<T> *nodo){
+        if(nodo != NULL)
+            return 1+(max(calcolaAltezza(nodo->getFDX()), calcolaAltezza(nodo->getFSX())));
+        else return 0;
+    }
+    int max(int a, int b){
+        if(a>b)
+            return a;
+        else    
+            return b;
     }
     Nodo<T> *search(T valore)
     {
@@ -175,7 +193,7 @@ class Albero
         }
         return NULL;
     }
-    void trapianta(Nodo<T> *u, Nodo<T> *v)
+    void trapianta(Nodo<T> *v, Nodo<T> *u)
     { //trapianta v in u
         if (u->getPadre() == NULL)
             root = v;
@@ -186,6 +204,7 @@ class Albero
         if (v != NULL)
             v->setPadre(u->getPadre());
     }
+
     Nodo<T> *successore(Nodo<T> *nodo)
     {
         if (nodo->getFDX() != NULL)
@@ -193,7 +212,7 @@ class Albero
         else
         {
             Nodo<T> *i = nodo->getPadre();
-            //for(i = nodo->getPadre(); i != NULL && nodo == i->getFDX(); nodo = i, i = i->getPadre())
+            //for(i = nodo->getPadre(); i != NULL && nodo == i->getFDX(); nodo = i, i = i->getPadre());
             while (i != NULL && nodo == i->getFDX())
             {
                 nodo = i;
