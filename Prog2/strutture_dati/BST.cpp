@@ -76,7 +76,7 @@ class Nodo
 template <class T>
 class Albero
 {
-public:
+  public:
     Albero()
     {
         root = NULL;
@@ -84,10 +84,6 @@ public:
     Albero(T valore)
     {
         root = new Nodo<T>(valore);
-    }
-    Albero(Nodo<T> *nodo)
-    {
-        root = nodo;
     }
     Nodo<T> *getRoot()
     {
@@ -109,10 +105,12 @@ public:
         if (nodo != NULL)
             return cancellaNodo(nodo);
     }
-    int getAltezza(){
+    int getAltezza()
+    {
         return calcolaAltezza(root);
     }
-private:
+
+  private:
     Nodo<T> *root;
     void visitaInOrder(Nodo<T> *p)
     {
@@ -150,13 +148,14 @@ private:
         //if ed elseif -> massimo 1 figlio
         if (nodo->getFSX() == NULL) //se non ha figlio sinistro, trapiantiamo con il destro indipendetemente se sia NULL o meno
             trapianta(nodo->getFDX(), nodo);
-        else if (nodo->getFDX() == NULL) //se non ha figlio destro, come sopra ma con il figlio sinistro 
+        else if (nodo->getFDX() == NULL) //se non ha figlio destro, come sopra ma con il figlio sinistro
             trapianta(nodo->getFSX(), nodo);
         else
-        { //2 figli
+        {                                     //2 figli
             Nodo<T> *succ = successore(nodo); //sarà il minimo del sottoalbero destro di nodo
             //troviamo il successore e lo togliamo dalla sua posizione originale
-            if(succ->getPadre()!=nodo){
+            if (succ->getPadre() != nodo)
+            {
                 trapianta(succ->getFDX(), succ);
                 nodo->getFDX()->setPadre(succ);
                 succ->setFDX(nodo->getFDX());
@@ -164,20 +163,22 @@ private:
             trapianta(succ, nodo);
             nodo->getFSX()->setPadre(succ);
             succ->setFSX(nodo->getFSX());
-            
         }
         delete nodo;
         return this;
     }
-    int calcolaAltezza(Nodo<T> *nodo){
-        if(nodo != NULL)
-            return 1+(max(calcolaAltezza(nodo->getFDX()), calcolaAltezza(nodo->getFSX())));
-        else return 0;
+    int calcolaAltezza(Nodo<T> *nodo)
+    {
+        if (nodo != NULL)
+            return 1 + (max(calcolaAltezza(nodo->getFDX()), calcolaAltezza(nodo->getFSX())));
+        else
+            return 0;
     }
-    int max(int a, int b){
-        if(a>b)
+    int max(int a, int b)
+    {
+        if (a > b)
             return a;
-        else    
+        else
             return b;
     }
     Nodo<T> *search(T valore)
@@ -211,13 +212,15 @@ private:
             return minimo(nodo->getFDX());
         else
         {
-            Nodo<T> *i = nodo->getPadre();
-            //for(i = nodo->getPadre(); i != NULL && nodo == i->getFDX(); nodo = i, i = i->getPadre());
+            Nodo<T> *i;
+            for (i = nodo->getPadre(); i != NULL && nodo == i->getFDX(); nodo = i, i = i->getPadre())
+                ;
+            /*Nodo<T> *i = nodo->getPadre();
             while (i != NULL && nodo == i->getFDX())
             {
                 nodo = i;
                 i = i->getPadre();
-            }
+            }*/
             return i;
         }
     }
