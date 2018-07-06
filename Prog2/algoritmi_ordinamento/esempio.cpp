@@ -1,4 +1,4 @@
-#include "Sorting.cpp"
+#include "Sorting.h"
 
 
 int main()
