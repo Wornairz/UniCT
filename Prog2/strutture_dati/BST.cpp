@@ -5,7 +5,7 @@ using namespace std;
 template <class T>
 class Nodo
 {
-  public:
+public:
     Nodo()
     {
         padre = fdx = fsx = NULL;
@@ -66,7 +66,7 @@ class Nodo
         this->valore = valore;
     }
 
-  private:
+private:
     T valore;
     Nodo *padre;
     Nodo *fdx;
@@ -76,7 +76,7 @@ class Nodo
 template <class T>
 class Albero
 {
-  public:
+public:
     Albero()
     {
         root = NULL;
@@ -92,9 +92,9 @@ class Albero
     Albero *inserisci(T valore)
     {
         Nodo<T> *nodo = new Nodo<T>(valore);
-        return inserisci(nodo);
+        return ins_ric(root, nodo);
     }
-    void stampa(Nodo<T> *p)
+    void stampa(Nodo<T> *p = nullptr)
     {
         visitaInOrder(p);
         cout << endl;
@@ -110,7 +110,7 @@ class Albero
         return calcolaAltezza(root);
     }
 
-  private:
+private:
     Nodo<T> *root;
     void visitaInOrder(Nodo<T> *p)
     {
@@ -122,6 +122,34 @@ class Albero
             visitaInOrder(p->getFDX());
         }
         return;
+    }
+    Albero *ins_ric(Nodo<T> *nodo, Nodo<T> *nuovo)
+    {
+        if(root == NULL)
+            root = nuovo;
+        if(nuovo->getValore() < nodo->getValore())
+        {
+            if(nodo->getFSX() == NULL)
+            {
+                nuovo->setPadre(nodo);
+                nodo->setFSX(nuovo);
+                return this;
+            }
+            else
+                nodo = nodo->getFSX();
+        }
+        else
+        {
+            if(nodo->getFDX() == NULL)
+            {
+                nuovo->setPadre(nodo);
+                nodo->setFDX(nuovo);
+                return this;
+            }
+            else
+                nodo = nodo->getFDX();
+        }
+        return ins_ric(nodo, nuovo);
     }
     Albero *inserisci(Nodo<T> *nodo)
     {
@@ -151,7 +179,8 @@ class Albero
         else if (nodo->getFDX() == NULL) //se non ha figlio destro, come sopra ma con il figlio sinistro
             trapianta(nodo->getFSX(), nodo);
         else
-        {                                     //2 figli
+        {
+            //2 figli
             Nodo<T> *succ = successore(nodo); //sarà il minimo del sottoalbero destro di nodo
             //troviamo il successore e lo togliamo dalla sua posizione originale
             if (succ->getPadre() != nodo)
@@ -195,7 +224,8 @@ class Albero
         return NULL;
     }
     void trapianta(Nodo<T> *v, Nodo<T> *u)
-    { //trapianta v in u
+    {
+        //trapianta v in u
         if (u->getPadre() == NULL)
             root = v;
         else if (u->getPadre()->getFDX() == u)
@@ -235,5 +265,7 @@ class Albero
 
 int main()
 {
+    Albero<int> *tree = new Albero<int>(5);
+    tree->inserisci(10)->inserisci(3)->stampa();
     return 0;
 }
