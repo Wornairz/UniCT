@@ -19,7 +19,7 @@ void Sorting::insertionSort(int * v, int n)
 
 void Sorting::selectionSort(int * v, int n)
 {
-    // NON STABILE, IN-PLACE, O(n^2)
+    // NON STABILE, IN-PLACE
     // CASO MIGLIORE: Ω(n^2), CASO MEDIO: Θ(n^2), CASO PEGGIORE: O(n^2)
     int i, j, min;
     for(i = 0; i < n-1; i++)
@@ -69,7 +69,7 @@ void Sorting::_quickSort(int * v, int low, int high)
 
 void Sorting::_mergeSort(int * v, int low, int high)
 {
-    // STABILE, NON IN-PLACE, O(n*logn)
+    // STABILE, NON IN-PLACE
     // CASO MIGLIORE: Ω(n*logn), CASO MEDIO: Θ(n*logn), CASO PEGGIORE: O(n*logn)
     if(low < high)
     {
@@ -80,8 +80,13 @@ void Sorting::_mergeSort(int * v, int low, int high)
     }
 }
 
-
-
+void Sorting::bogoSort(int * v, int n)
+{
+    // NON STABILE, IN-PLACE
+    // CASO MIGLIORE: Θ(n), CASO MEDIO: Θ(n*n!), CASO PEGGIORE: Θ(LOL)
+    while(!is_sorted(v, n))
+        random_shuffle(&v[0], &v[n]);
+}
 
 
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -96,6 +97,7 @@ public:
     }
     void stampa(Nodo<T> *p = nullptr)
     {
+        if(!p) p = root;
         visitaInOrder(p);
         cout << endl;
     }
@@ -104,6 +106,15 @@ public:
         Nodo<T> *nodo = search(valore);
         if (nodo != NULL)
             return cancellaNodo(nodo);
+    }
+    void naturalFill(Nodo<T> * p, queue<T> & q)
+    {
+        if(p != NULL)
+        {
+            naturalFill(p->getFSX(), q);
+            p->setValore(q.front()); q.pop();
+            naturalFill(p->getFDX(), q);
+        }
     }
     int getAltezza()
     {
@@ -126,7 +137,10 @@ private:
     Albero *ins_ric(Nodo<T> *nodo, Nodo<T> *nuovo)
     {
         if(root == NULL)
+        {
             root = nuovo;
+            return this;
+        }
         if(nuovo->getValore() < nodo->getValore())
         {
             if(nodo->getFSX() == NULL)
@@ -265,7 +279,11 @@ private:
 
 int main()
 {
-    Albero<int> *tree = new Albero<int>(5);
-    tree->inserisci(10)->inserisci(3)->stampa();
+    Albero<int> *tree = new Albero<int>();
+    tree->inserisci(10)->inserisci(3)->inserisci(12)->inserisci(-23)->inserisci(15);
+    queue<int> coda;
+    coda.push(1); coda.push(2); coda.push(4); coda.push(9); coda.push(15);
+    tree->naturalFill(tree->getRoot(), coda);
+    tree->stampa();
     return 0;
 }
