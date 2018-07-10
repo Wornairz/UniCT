@@ -2,6 +2,7 @@
 #define SORTING_H
 
 #include <chrono>
+#include <algorithm>
 #include <cstring>
 #include <iostream>
 #include <math.h>
@@ -24,6 +25,7 @@ class Sorting
         void bubbleSort(int*, int);
         void mergeSort(int*, int);
         void quickSort(int*, int);
+        void bogoSort(int*, int);
         void printArray(int*, int);
         int* revSortedArray(int);
         int* sortedArray(int);
