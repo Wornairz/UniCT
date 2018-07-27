@@ -1,6 +1,5 @@
-#include "Sorting.h"
 
-void Sorting::insertionSort(int * v, int n)
+void insertionSort(int * v, int n)
 {
     // STABILE , IN-PLACE
     // CASO MIGLIORE: Ω(n), CASO MEDIO: Θ(n^2), CASO PEGGIORE: O(n^2)
@@ -17,7 +16,7 @@ void Sorting::insertionSort(int * v, int n)
     }
 }
 
-void Sorting::selectionSort(int * v, int n)
+void selectionSort(int * v, int n)
 {
     // NON STABILE, IN-PLACE
     // CASO MIGLIORE: Ω(n^2), CASO MEDIO: Θ(n^2), CASO PEGGIORE: O(n^2)
@@ -35,7 +34,7 @@ void Sorting::selectionSort(int * v, int n)
     }
 }
 
-void Sorting::bubbleSort(int * v, int n)
+void bubbleSort(int * v, int n)
 {
     // STABILE, IN-PLACE
     // CASO MIGLIORE: Ω(n), CASO MEDIO: Θ(n^2), CASO PEGGIORE: O(n^2)
@@ -55,7 +54,7 @@ void Sorting::bubbleSort(int * v, int n)
     }while(!sorted);
 }
 
-void Sorting::_quickSort(int * v, int low, int high)
+void _quickSort(int * v, int low, int high)
 {
     // NON STABILE, "IN-PLACE"(In verità occupa O(n)/O(logn) spazio nello stack)
     // CASO MIGLIORE: Ω(n*logn), CASO MEDIO: Θ(n*logn), CASO PEGGIORE: O(n^2)
@@ -67,7 +66,7 @@ void Sorting::_quickSort(int * v, int low, int high)
     }
 }
 
-void Sorting::_mergeSort(int * v, int low, int high)
+void _mergeSort(int * v, int low, int high)
 {
     // STABILE, NON IN-PLACE
     // CASO MIGLIORE: Ω(n*logn), CASO MEDIO: Θ(n*logn), CASO PEGGIORE: O(n*logn)
@@ -80,7 +79,7 @@ void Sorting::_mergeSort(int * v, int low, int high)
     }
 }
 
-void Sorting::bogoSort(int * v, int n)
+void bogoSort(int * v, int n)
 {
     // NON STABILE, IN-PLACE
     // CASO MIGLIORE: Θ(n), CASO MEDIO: Θ(n*n!), CASO PEGGIORE: Θ(LOL)
@@ -90,7 +89,7 @@ void Sorting::bogoSort(int * v, int n)
 
 
 
-void Sorting::merge(int * v, int low, int mid, int high)
+void merge(int * v, int low, int mid, int high)
 {
     // O(n)
     int * t = new int[high-low+1];
@@ -114,7 +113,7 @@ void Sorting::merge(int * v, int low, int mid, int high)
 }
 
 
-int Sorting::hoarePartition(int * v, int low, int high)
+int hoarePartition(int * v, int low, int high)
 {
     // O(n)
     int i = low - 1;
@@ -129,7 +128,7 @@ int Sorting::hoarePartition(int * v, int low, int high)
     }
 }
 
-int Sorting::lomutoPartition(int * v, int low, int high)
+int lomutoPartition(int * v, int low, int high)
 {
     // O(n)
     int i = low - 1;
@@ -143,30 +142,30 @@ int Sorting::lomutoPartition(int * v, int low, int high)
 }
 
 
-void Sorting::swap(int & left, int & right)
+void swap(int & left, int & right)
 {
     int temp = left;
     left = right;
     right = temp;
 }
 
-void Sorting::quickSort(int * v, int n)
+void quickSort(int * v, int n)
 {
     _quickSort(v, 0, n-1);
 }
 
-void Sorting::mergeSort(int * v, int n)
+void mergeSort(int * v, int n)
 {
     _mergeSort(v, 0, n-1);
 }
 
-bool Sorting::is_sorted(int * v, int n)
+bool is_sorted(int * v, int n)
 {
     int i;
     for(i = 0; i < n-1 && v[i] <= v[i+1]; i++);
     return (i == n-1);
 }
-int* Sorting::randomArray(int size)
+int* randomArray(int size)
 {
     int * v = new int[size];
 
@@ -176,7 +175,7 @@ int* Sorting::randomArray(int size)
     return v;
 }
 
-int* Sorting::sortedArray(int size)
+int* sortedArray(int size)
 {
     int * v = new int[size];
 
@@ -188,7 +187,7 @@ int* Sorting::sortedArray(int size)
     return v;
 }
 
-int* Sorting::revSortedArray(int size)
+int* revSortedArray(int size)
 {
     int * v = new int[size];
 
@@ -201,30 +200,30 @@ int* Sorting::revSortedArray(int size)
 }
 
 
-int* Sorting::all0s(int size)
+int* all0s(int size)
 {
     return new int[size]();
 }
 
 
-void Sorting::printArray(int * v, int n)
+void printArray(int * v, int n)
 {
     for(int i = 0; i < n; i++)
-        std::cout << v[i] << " ";
-    std::cout << std::endl;
+        cout << v[i] << " ";
+    cout << endl;
 }
 
-void Sorting::test(int * v, int n, Sorting & s, void (Sorting::*f)(int*, int))
+void test(int * v, int n, void (*f)(int*, int))
 {
     auto begin = chrono::steady_clock::now();
 
-    (s.*f)(v, n);
+    (*f)(v, n);
 
     auto end = chrono::steady_clock::now();
 
-    cout << "Tempo impiegato = " <<  chrono::duration_cast<chrono::milliseconds>(end - begin).count() << " ms" << endl;
+    cout << "Tempo impiegato = " <<  chrono::duration_cast<chrono::milliseconds>(end - begin).count() << " ms, ";
 
-    cout << (is_sorted(v, n) ? "Ordinato correttamente" : "Non ordinato") << endl;
+    cout << (is_sorted(v, n) ? "ordinato correttamente" : "non ordinato") << endl;
 }
 
 
