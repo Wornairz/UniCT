@@ -1,0 +1,19 @@
+ArrayList<Heart> cuori;
+
+void setup(){
+  size(512, 512);
+  frameRate(60);
+  background(10, 10, 50);
+  cuori = new ArrayList();
+}
+
+void draw(){
+  if(round(random(100)) < 5 ){
+    cuori.add(new Heart(random(512), round(random(-5, 5)), round(random(3, 7))));
+  }
+  for(Heart cuore : cuori){
+    cuore.disegna();
+    cuore.sposta();
+    cuore.controllaCollisione(mouseX, mouseY);
+  }
+}
