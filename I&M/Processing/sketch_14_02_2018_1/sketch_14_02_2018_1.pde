@@ -7,14 +7,8 @@ void setup(){
 }
 
 void draw(){
-<<<<<<< HEAD
   fill(10, 10, 50, 100);
   rect(0,0,512,512);
-=======
-  fill(0,0,40,80);
-  rect(0,0,512,512);
-  
->>>>>>> 099c6caeebd6889474797a24b85989b91416b5de
   if(round(random(100)) < 5 ){
     cuori.add(new Heart(random(512), round(random(-5, 5)), round(random(3, 7))));
   }

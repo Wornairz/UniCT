@@ -1,12 +1,7 @@
 class Heart {
   float posX, posY;
   boolean alive;
-<<<<<<< HEAD
-  int sx;
-  float sy;
-=======
   float sx, sy;
->>>>>>> 099c6caeebd6889474797a24b85989b91416b5de
   color colore;
 
   Heart(float posX, int sx, int sy) {
@@ -20,14 +15,8 @@ class Heart {
 
   void sposta() {
     posX += sx;
-<<<<<<< HEAD
-    if (!alive) {
-      sy += 0.1 + (464 % 21 / 80);
-    }
-=======
     if(!alive)
       sy += 0.1 + (00464 % 21) / 80;
->>>>>>> 099c6caeebd6889474797a24b85989b91416b5de
     posY += sy;
   }
 
