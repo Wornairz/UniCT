@@ -37,3 +37,9 @@ debug.*
 input.txt
 output.txt
 Prog2/.vscode/settings.json
+
+#Test Images for I&M
+
+I&M/*/*.jpg
+I&M/*/*.jpeg
+I&M/*/*.png
