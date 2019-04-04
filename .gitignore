@@ -36,10 +36,17 @@ prova.*
 debug.*
 input.txt
 output.txt
-Prog2/.vscode/settings.json
+/Prog2/.vscode/settings.json
+tabella.txt
+
 
 #Test Images for I&M
-
 I&M/*/*.jpg
 I&M/*/*.jpeg
 I&M/*/*.png
+
+
+#File senza estensione (da StackOverflow)
+*
+!/**/
+!*.*
