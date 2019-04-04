@@ -9,7 +9,7 @@
 #include <unistd.h>
 #include <errno.h>
 int main(int argc, char *argv[]) {
-    struct sockaddr_in server_addr; // indirizzo del server a cui si manderanno i messaggi
+    struct sockaddr_in server_addr, client_addr; // indirizzo del server a cui si manderanno i messaggi
     socklen_t length = sizeof(server_addr);
     char messaggio[100];
     int sockfd;
@@ -22,6 +22,16 @@ int main(int argc, char *argv[]) {
     }
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
         printf("\nErrore nell'apertura del socket");
+        return -1;
+    }
+    
+    memset((char *)&client_addr, 0, sizeof(client_addr));
+    client_addr.sin_family = AF_INET; 
+    client_addr.sin_addr.s_addr = htonl(INADDR_ANY); 
+    client_addr.sin_port = htons(atoi(argv[2])); 
+
+    if (bind(sockfd, (struct sockaddr *)&client_addr, sizeof(client_addr)) < 0) { // La system call bind associa un socket ad un "internet address"
+        printf("\nErrore nel binding. Errore %d \n", errno);
         return -1;
     }
     memset(&server_addr, 0, sizeof(server_addr));

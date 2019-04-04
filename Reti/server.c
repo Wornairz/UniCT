@@ -46,12 +46,12 @@ int main(int argc, char *argv[]) {
     int pid = fork();
 
     if (pid == 0) { // Processo figlio
-		struct sockaddr_in client_addr; // Struttura dati in cui verrà memorizzato l'"indirizzo" del client
+        struct sockaddr_in client_addr; // Struttura dati in cui verrà memorizzato l'"indirizzo" del client
         socklen_t length = sizeof(client_addr); // lunghezza dell'"indirizzo" del client
         char buffer[150];
 
         while(1) {
-			// recvfrom mette il messaggio nel buffer e memorizza tutte le informazioni relative al client in client_addr
+            // recvfrom mette il messaggio nel buffer e memorizza tutte le informazioni relative al client in client_addr
             recvfrom(sockfd, buffer, sizeof(buffer), 0, (struct sockaddr *)&client_addr, &length); //Il terzo parametro è relativo a dei flag
             printf("From IP:%s Port:%d msg:%s \n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port), buffer); // inet_ntoa converte l'indirizzo numerico in forma "xx.xx.xx.xx"
             fprintf(file, "%s\n%d\n%s\n", inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port), buffer); // Scrive l'indirizzo, la porta ed il messaggio nel file in righe diverse
@@ -59,20 +59,27 @@ int main(int argc, char *argv[]) {
         }
     }
     else { // Processo padre
-		struct sockaddr_in client_addr; // Struttura dati in cui verrà memorizzato l'"indirizzo" del client letto dal file(inizialmente è vuota, verra riempita in seguito)
-		client_addr.sin_family = AF_INET;
-		char indirizzo[50];
-		char porta[50];
+        struct sockaddr_in broadcast_addr; // Struttura dati in cui verrà memorizzato l'"indirizzo" del client letto dal file(inizialmente è vuota, verra riempita in seguito)
+        broadcast_addr.sin_family = AF_INET;
+        broadcast_addr.sin_addr.s_addr = inet_addr("10.0.0.255");
+        broadcast_addr.sin_port = htons(atoi(argv[1]));
+        char indirizzo[50];
+        char porta[50];
         char messaggio[50];
-        
+        int broadfd, t = 1;
+
+        if ((broadfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+            printf("\nErrore nell'apertura del socket");
+            return -1;
+        }
+        setsockopt(sockfd, SOL_SOCKET, SO_BROADCAST, &t, sizeof(t));
+
         while(1) {
-			rewind(file);
+            rewind(file);
             while (fgets(indirizzo, 50, file) != NULL) {
-				fgets(porta, 50, file);
+                fgets(porta, 50, file);
                 fgets(messaggio, 50, file);
-                client_addr.sin_addr.s_addr = inet_addr(indirizzo); 
-				client_addr.sin_port = htons(atoi(porta));  
-                sendto(sockfd, messaggio, strlen(messaggio) + 1, 0, (struct sockaddr *)&client_addr, sizeof(client_addr));
+                sendto(sockfd, messaggio, strlen(messaggio) + 1, 0, (struct sockaddr *)&broadcast_addr, sizeof(broadcast_addr));
             }
             sleep(2);
         }
