@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #ifndef SORTING_H
 #define SORTING_H
 
@@ -85,4 +84,3 @@ void test(int*, int, void (*f)(int*, int));
 
 
 #endif // SORTING_H
->>>>>>> master

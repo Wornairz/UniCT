@@ -32,12 +32,11 @@
 *.app
 
 # Test
-prova.*
-debug.*
-input.txt
-output.txt
-/Prog2/.vscode/settings.json
-tabella.txt
+**/prova.*
+**/input.txt
+**/output.txt
+**/.vscode/settings.json
+Reti/tabella.txt
 
 
 #Test Images for I&M
@@ -47,6 +46,6 @@ I&M/*/*.png
 
 
 #File senza estensione (da StackOverflow)
-*
-!/**/
-!*.*
+#*
+#!/**/
+#!*.*
