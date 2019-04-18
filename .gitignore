@@ -40,9 +40,9 @@ Reti/tabella.txt
 
 
 #Test Images for I&M
-I&M/*/*.jpg
-I&M/*/*.jpeg
-I&M/*/*.png
+/I&M/**/*.jpg
+/I&M/**/*.jpeg
+/I&M/**/*.png
 
 
 #File senza estensione (da StackOverflow)
