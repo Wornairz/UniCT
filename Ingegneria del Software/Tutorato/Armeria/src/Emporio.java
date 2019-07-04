@@ -35,5 +35,4 @@ public class Emporio {
 	public static Spada compraSpadaFullOptional() {
 		return new Infuocata(new Avvelenata(new Spettrale(new SpadaPesante())));
 	}
-
 }

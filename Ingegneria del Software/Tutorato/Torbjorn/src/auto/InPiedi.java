@@ -1,3 +1,4 @@
+package auto;
 
 public class InPiedi implements Postura{
 

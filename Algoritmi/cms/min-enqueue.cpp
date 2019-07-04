@@ -4,16 +4,15 @@
 
 using namespace std;
 
-int cont = 0;
-
 template <class T>
 void enqueue_min_heap(T * array, T value, int heap_size){
-	array[heap_size] = value;
-	int parent = heap_size/2;
-	while(parent>0 && array[heap_size]<array[parent]){
-		swap(array[heap_size], array[parent]);
-		heap_size = parent;
-		parent = heap_size/2;
+	int curr = heap_size;
+	array[curr] = value;
+	int parent = curr/2;
+	while(parent>0 && array[curr]<array[parent]){
+		swap(array[curr], array[parent]);
+		curr = parent;
+		parent = curr/2;
 	}
 }
 
@@ -30,7 +29,6 @@ int main() {
     string line, tipo;
     int n;
     while (getline(infile, line)) {
-		cout << "Riga: " << ++cont << "\n";
         istringstream iss(line);
         iss >> tipo;
         iss >> n;

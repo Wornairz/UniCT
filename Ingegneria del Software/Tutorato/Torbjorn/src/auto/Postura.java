@@ -1,3 +1,4 @@
+package auto;
 
 public interface Postura {
 	public Postura spara();

@@ -39,29 +39,22 @@ int main(){
 	string line;
 	int n;
 	int * start,* end;
-	while(getline(input, line)){
-		istringstream iss(line);
-		iss >> n;
+	for(int j=0; j<3; j++){
+		//istringstream iss(line);
+		input >> n;
 		start = new int[n];
 		end = new int[n];
 		for(int i=0; i<n; i++){
 			string temp;
 			int inizio, fine;
-			iss >> temp;
-			//cout << "temp1 = " << temp << " ";
+			input >> temp;
+			cout << temp << endl;
 			istringstream(temp.substr(1)) >> inizio;
-			iss >> temp;
-			//cout << "temp2 = " << temp << endl;
-			istringstream(temp.substr(0, temp.find(")"))) >> fine;
-			//cout << "inizio = " << inizio << " fine = " << fine << endl;
+			istringstream(temp.substr(temp.find(",")+1, temp.find(")"))) >> fine;
 			start[i] = inizio;
 			end[i] = fine;
 		}
 		ordina(end, n, start);
-		/*for(int i=0; i<n; i++){
-			cout << "(" << start[i] << " " << end[i] << ")" << " ";
-		}
-		cout << endl;*/
 		output << cardinalita(start, end, n) << endl;
 	}
 	return 0;

@@ -55,3 +55,5 @@ Reti/client
 Reti/server
 
 Reti/chat
+
+*.prefs

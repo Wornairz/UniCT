@@ -1,3 +1,4 @@
+package auto;
 
 public class Accovacciato implements Postura {
 
