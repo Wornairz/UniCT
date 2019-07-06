@@ -1,49 +1,46 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 
 using namespace std;
 
-void ordina(int *a, int n){
-	for(int i=0; i<n; i++){
-		for(int j=i+1; j<n; j++){
-			if(a[i]<a[j]){
-				int temp = a[i];
+void sort(int *a, int N) {
+	for (int i=0; i<N-1; i++) {
+		for (int j=i+1; j<N; j++) {
+			if (a[i] < a[j]) {
+				int tmp = a[i];
 				a[i] = a[j];
-				a[j] = temp;
+				a[j] = tmp;
 			}
 		}
 	}
 }
 
-int greeda(int *a, int n, int p){
-	int sum = 0;
-	int count = 0;
-	for(int i=0; i<n; i++){
-		if(count+1<=p){
-			count++;
-			sum+=a[i];			
-		}
+int greedy_knapsack(int *a, int N, int P) {
+	sort(a,N);
+	int sum = 0; 
+	for (int i=0; i<P; i++) {
+		sum += a[i];
 	}
-	return sum;
+	return sum; 
 }
 
-
-int main(){
+int main() {
+	
 	ifstream input("input.txt");
 	ofstream output("output.txt");
-	string line;
-	int * array;
-	int p, n;
-	while(getline(input, line)){
-		istringstream iss(line);
-		iss >> n;
-		iss >> p;
-		array = new int[n];
-		for(int i=0; i<n; i++)
-			iss >> array[i];
-		ordina(array, n);
-		output << greeda(array, n, p) << "\n";
+	
+	
+	int N, P; 
+	
+	while (!input.eof()) {
+		input >> N;
+		input >> P; 
+		
+		int a[N];
+		for (int i=0; i<N; i++) 
+			input >> a[i];
+		
+		output << greedy_knapsack(a, N, P) << endl;
 	}
-	return 0;
+		
 }
