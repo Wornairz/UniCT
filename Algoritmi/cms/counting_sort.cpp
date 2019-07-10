@@ -18,19 +18,20 @@ int getMax(int *A, int n){
 }
 
 void variabilita(int * A, int n, int * C, int k){
-	for(int i=0; i<=k; i++)
+	for(int i=0; i<=k; i++) //inizializza il vettore C che va da 0 a k (massimo valore dell'array A)
 		C[i] = 0;
-	for(int i=0; i<n; i++)
-		C[A[i]]++;
-	for(int i=0; i<=k; i++)
-		C[i] += C[i-1];
+	for(int i=0; i<n; i++) //ad ogni posizione X del vettore C assegnamo il numero di valori uguali a X nell'array A
+		C[A[i]]++; //es. se A[i] = 5 aumentiamo il valore di C[5] di un'unità
+	for(int i=1; i<=k; i++) //per ogni numero dell'array C contiamo quanti sono i numeri minori o uguali ad esso
+		C[i] += C[i-1]; //il numero di elementi <= di X è il numero di elementi X + il numero di elementi <= ad X-1
+	//quindi in C[i] avremo il n° degli elementi <= i
 }
 
 int * counting_sort(int * A, int * C, int n){
-	int * B = new int[n]; // output
-	for(int i=n-1; i>=0; i--){
-		B[C[A[i]]-1] = A[i];
-		C[A[i]]--;
+	int * B = new int[n]; //array di output
+	for(int i=n-1; i>=0; i--){ //andiamo dal valore più grande a quello più piccolo
+		B[C[A[i]]-1] = A[i]; //posizioniamo il valore A[i] nella posizione indicata da C[A[i]]. Il -1 è per motivi di indici dell'array.
+		C[A[i]]--; //quindi diminuiamo il numero di elementi <= di A[i] in modo che il prossimo inserimento di un elemento uguale ad A[i] sia nella posizione corretta (la precedente)
 	}
 	delete[] A;
 	return B;

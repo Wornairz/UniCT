@@ -39,7 +39,7 @@ int main(){
 	string line;
 	int n;
 	int * start,* end;
-	for(int j=0; j<3; j++){
+	for(int j=0; j<100; j++){
 		//istringstream iss(line);
 		input >> n;
 		start = new int[n];

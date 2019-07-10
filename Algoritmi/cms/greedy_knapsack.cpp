@@ -32,7 +32,7 @@ int main() {
 	
 	int N, P; 
 	
-	while (!input.eof()) {
+	for(int j=0; j<100; j++) {
 		input >> N;
 		input >> P; 
 		

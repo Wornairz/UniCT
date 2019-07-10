@@ -25,7 +25,6 @@ int min_edit(string s1, string s2){
 				m[i][j] = min(m[i-1][j-1], min(m[i-1][j], m[i][j-1]))+1;
 		}
 	}
-
 	return m[s1.length()][s2.length()];
 }
 
@@ -40,7 +39,6 @@ int main(){
 		iss >> l2;
 		iss >> s1;
 		iss >> s2;
-
 		output << min_edit(s1, s2) << endl;
 	}
 }
