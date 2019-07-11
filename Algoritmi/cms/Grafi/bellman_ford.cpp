@@ -110,15 +110,6 @@ int main(){
             input >> temp;
             d = stoi(temp);
         }
-        
-        /*for(int i=0; i<n; i++){
-            cout << nodi[i] << " ";
-        }
-        cout << endl;
-        for(int i=0; i<m; i++){
-            cout << i << ") " << archi[i].da << "->" << archi[i].a << " - p = " << archi[i].peso << endl;
-        }
-        cout << endl;*/
 
         int * pesi = bellman_ford(s, d);
 
