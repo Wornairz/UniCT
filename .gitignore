@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+*.class
 
 # Test
 **/prova.*
@@ -37,7 +38,7 @@
 **/output.txt
 **/.vscode/settings.json
 Reti/tabella.txt
-
+TSDW/Tomcat/
 
 #Test Images for I&M
 /I&M/**/*.jpg
@@ -49,11 +50,5 @@ Reti/tabella.txt
 #*
 #!/**/
 #!*.*
-
-Reti/client
-
-Reti/server
-
-Reti/chat
 
 *.prefs
