@@ -32,6 +32,9 @@
 *.app
 *.class
 
+# IDE
+*.idea
+
 # Test
 **/prova.*
 **/input.txt
@@ -50,5 +53,11 @@ TSDW/Tomcat/
 #*
 #!/**/
 #!*.*
+
+Reti/client
+
+Reti/server
+
+Reti/chat
 
 *.prefs
