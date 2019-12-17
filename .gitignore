@@ -31,9 +31,12 @@
 *.out
 *.app
 *.class
+*.jar
 
 # IDE
 *.idea
+*.classpath
+*.project
 
 # Test
 **/prova.*
