@@ -25,7 +25,10 @@ mysql -u root
 *   Per aggiornare le tabelle dalla igrazione devo prima fare un rollback (migrate:rollback)
 *   e poi fare nuovamente migrate
 *   Abbiamo modificato la tabella inserendo il prezzo nullable
-
+*   Creazione del model e della migration possono essere fatti in un unico comando:
+    ```
+php artisan make:model Game --migration  
+``` 
 ### Comandi per sincronizzare le modifiche dal model al database
 ```
 php artisan migrate:status  
@@ -42,6 +45,7 @@ php artisan make:controller GamesController -r
 ```
 
 #### Osservazioni
+*   Il -r lo usiamo per generare le funzioni del controller, altrimenti dovremo farlo a mano
 
 ### Uso del tinker per aggiungere un elemento
 ```
