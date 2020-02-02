@@ -66,7 +66,7 @@ $game1=new App\Game();
 
 ### Lista delle rotte definite
 ```
-php artisan route::list
+php artisan route:list
 ```
 
 ### Osservazioni
