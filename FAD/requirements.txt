@@ -1,0 +1,11 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+scikit-learn-extra
+statsmodels
+plotly
+nbformat
+imbalanced-learn
+graphviz
