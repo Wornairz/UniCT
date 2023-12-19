@@ -3,7 +3,7 @@ numpy
 matplotlib
 seaborn
 scikit-learn
-scikit-learn
+scikit-learn-extra
 statsmodels
 plotly
 nbformat
