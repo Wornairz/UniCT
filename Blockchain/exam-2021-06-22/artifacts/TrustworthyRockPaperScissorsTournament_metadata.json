@@ -1,0 +1,145 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "firstPlayer",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable",
+						"name": "secondPlayer",
+						"type": "address"
+					},
+					{
+						"internalType": "uint8",
+						"name": "targetWins",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "matchFee",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "enum TrustworthyRockPaperScissorsTournamentSpecs.Player",
+						"name": "winner",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "numMatch",
+						"type": "uint8"
+					}
+				],
+				"name": "MatchWonBy",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "enum TrustworthyRockPaperScissorsTournamentSpecs.Player",
+						"name": "winner",
+						"type": "uint8"
+					}
+				],
+				"name": "TournamentWonBy",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "disputedMatches",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "movePaper",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "moveRock",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "moveScissor",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/exam-2021-06-22/exam-2021-06-22.sol": "TrustworthyRockPaperScissorsTournament"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/exam-2021-06-22/exam-2021-06-22-specs.sol": {
+			"keccak256": "0xeccd087ef947efa10f2798b4f1737ddd94c2a9442448d31aed20fbecb44cba28",
+			"license": "None",
+			"urls": [
+				"bzz-raw://fc23b5cb0095e9c33af2b462b71cdc28cd54c066f5dbde39c91363d93436c282",
+				"dweb:/ipfs/QmSSmMxQng6HDyri9tUEKkqZ5dNPZ8TxNS6pSiUneQTGM4"
+			]
+		},
+		"contracts/exam-2021-06-22/exam-2021-06-22.sol": {
+			"keccak256": "0xb1c5c9b5073b1fe4f4c76ea3446b7b77480fd280fd9cfe9d3753f219e0599383",
+			"urls": [
+				"bzz-raw://09a09b7bb54dcc434eeb37cdca3f330f4e309505154a429a85c5b0fecc38c11f",
+				"dweb:/ipfs/QmbxyiV8TcQRZ74a77525K8cKxaeKcCnPMgCfCTHeptSST"
+			]
+		}
+	},
+	"version": 1
+}

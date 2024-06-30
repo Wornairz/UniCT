@@ -1,0 +1,452 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_initialPigeons",
+						"type": "uint16"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_initialPigeonsFixedScore",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_birthFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_renamingFee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_pubertyBlockPeriodInSecs",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_cooldownBlockPeriodInSecs",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "feeToPay",
+						"type": "uint256"
+					}
+				],
+				"name": "InsufficientSentAmount",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ManagerReservedAction",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "remainingTimeInSecs",
+						"type": "uint256"
+					}
+				],
+				"name": "ParentStillInCooldownPeriod",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "remainingTimeInSecs",
+						"type": "uint256"
+					}
+				],
+				"name": "ParentStillInPubertyPeriod",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ParentsCannotBeEqual",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "PigeonIdentifierUnknown",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "PigeonOwnerReservedAction",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "firstParent",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "secondParent",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "generation",
+						"type": "uint16"
+					}
+				],
+				"name": "Birth",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "birthFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newFee",
+						"type": "uint256"
+					}
+				],
+				"name": "changeBirthFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_newFee",
+						"type": "uint256"
+					}
+				],
+				"name": "changeRenamingFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getPigeonData",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "geneticScore",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint16",
+								"name": "generation",
+								"type": "uint16"
+							},
+							{
+								"internalType": "uint256",
+								"name": "firstParent",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "secondParent",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "birthTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "cooldownEndBlockTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct CryptoPigeonSpecs.Pigeon",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "ownerOf",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "firstParent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "secondParent",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "pigeonBirth",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_newName",
+						"type": "string"
+					}
+				],
+				"name": "renamePigeon",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renamingFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawProfits",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/exam-2023-07-14/exam-2023-07-14.sol": "CryptoPigeon"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/exam-2023-07-14/exam-2023-07-14-specs.sol": {
+			"keccak256": "0x75b0e331b9b497793e9e702dc6222cd141a4cc79a3ca16753b7620146b258573",
+			"license": "None",
+			"urls": [
+				"bzz-raw://530f832c773dd05b5530de33d55ef5ae9f02bf63706441f09dde0bbdf10a5331",
+				"dweb:/ipfs/QmPizgfH2CGRdHFPancKEvFadUPiNnwvTDjomq2Pcf1PnV"
+			]
+		},
+		"contracts/exam-2023-07-14/exam-2023-07-14.sol": {
+			"keccak256": "0x9f057eb8a30292670ddc72bb756234c2f52f0862a9833b621a10c4334f715a99",
+			"license": "None",
+			"urls": [
+				"bzz-raw://20c75510bd0effe5dce35aaa716aa0b9421187c3acfd47293a06a6d455bba8c6",
+				"dweb:/ipfs/QmVifc4H1qbMBGXADE2Pcf75AkWYnBwt73vrMwfTm9ACtA"
+			]
+		}
+	},
+	"version": 1
+}

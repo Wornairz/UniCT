@@ -1,0 +1,271 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "candidationDays",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "votingDays",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint8",
+						"name": "quorumPercent",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "CandidateHasToBeAVoter",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CandidationPhaseAlreadyClosed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ElectionClosedWithAnInvalidResult",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ElectionClosedWithoutQuorum",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ItIsNotACandidate",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OnlyAcceptedCandidatesCanBeVoted",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OnlyKnownVotersCanVote",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "OnlyOneVotePerVoter",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "PresidentReservedAction",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "VotingPhaseAlreadyClosed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "VotingPhaseNotYetClosed",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "VotingPhaseNotYetOpen",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "candidate",
+						"type": "address"
+					}
+				],
+				"name": "AcceptedCandidation",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					}
+				],
+				"name": "ElectionRegularlyClosed",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "candidate",
+						"type": "address"
+					}
+				],
+				"name": "acceptCandidation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "candidatesInput",
+						"type": "address[]"
+					}
+				],
+				"name": "acceptCandidations",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "voter",
+						"type": "address"
+					}
+				],
+				"name": "addVoter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "votersInput",
+						"type": "address[]"
+					}
+				],
+				"name": "addVoters",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "candidateMySelf",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "candidate",
+						"type": "address"
+					}
+				],
+				"name": "candidateSomeoneElse",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "closeElection",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "valid",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAcceptedCandidates",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "candidatesInput",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "candidate",
+						"type": "address"
+					}
+				],
+				"name": "vote",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/exam-2022-09-02/exam-2022-09-02.sol": "UnblindElection"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/exam-2022-09-02/exam-2022-09-02-specs.sol": {
+			"keccak256": "0x987c993804a6d545fceaa7a69938fdafb155006b4b5c0643f45b89eb365166a8",
+			"license": "None",
+			"urls": [
+				"bzz-raw://410946250bf82ca239a79a685f024e6b670c9db17b2809ee6781d71c3205055c",
+				"dweb:/ipfs/QmdxYaNivDh3pyt2Cv9qZu51srTvhRKn9TQmVTSqd6CDvs"
+			]
+		},
+		"contracts/exam-2022-09-02/exam-2022-09-02.sol": {
+			"keccak256": "0x859671882057efbbafa9ec0dc859d57b55f91dddce84b527e8dd82a78b9c08f5",
+			"urls": [
+				"bzz-raw://60dd5458c524566a04e1afe83490ef5cdf805c46702fc90e2a89e33e80f2478b",
+				"dweb:/ipfs/QmXndTgH3gNm7DWjLvy5ssayNv4YnZSkVQ2wiZccbWHXTE"
+			]
+		}
+	},
+	"version": 1
+}

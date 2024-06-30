@@ -1,0 +1,318 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "bookingPeriodInHours",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cardUnitCost",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "BookingPeriodAlreadyExpired",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "EnquirerIsNotAGamer",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "secondsToGo",
+						"type": "uint256"
+					}
+				],
+				"name": "ExtractionPhaseNotYetStarted",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "GameAlreadyEnded",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "providedFunds",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cardCost",
+						"type": "uint256"
+					}
+				],
+				"name": "InsufficientFundsToBuyEvenACard",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "prizeAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "numberOfWinners",
+						"type": "uint256"
+					}
+				],
+				"name": "BingoHasBeenWon",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "prizeAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "numberOfWinners",
+						"type": "uint256"
+					}
+				],
+				"name": "FiveInARowHasBeenWon",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "number",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "matchingCards",
+						"type": "uint256"
+					}
+				],
+				"name": "NumberExtraction",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "prizeAmount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					}
+				],
+				"name": "PrizePayed",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "buyer",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "numberOfCards",
+						"type": "uint256"
+					}
+				],
+				"name": "PurchaseOfCards",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "buyCards",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "extractNextNumber",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "number",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getCardCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getGameState",
+				"outputs": [
+					{
+						"internalType": "enum BingoGameSpecs.GameState",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getMyCards",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint8[5][3]",
+								"name": "cells",
+								"type": "uint8[5][3]"
+							}
+						],
+						"internalType": "struct BingoGameSpecs.Card[]",
+						"name": "myCards",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNumberOfCards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "cardsNumber",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getNumberOfPlayers",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "playersNumber",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "number",
+						"type": "uint8"
+					}
+				],
+				"name": "isItExtracted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/exam-2023-06-30/exam-2023-06-30.sol": "BingoGame"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/exam-2023-06-30/exam-2023-06-30-specs.sol": {
+			"keccak256": "0xa9aa656b58b0bb2066137a1bdc4bfa6edf4a7f7f1c2554e994b5d42d59879ab0",
+			"license": "None",
+			"urls": [
+				"bzz-raw://46bfe7f5af6ab56bb192e3a76fdb45cee2321fb0f36a3f6ddb154b51a9da1430",
+				"dweb:/ipfs/QmZHz6E1e4TiFzPuAS82eu7qtSmAtb75URTKjgqyfTbFz3"
+			]
+		},
+		"contracts/exam-2023-06-30/exam-2023-06-30.sol": {
+			"keccak256": "0xcecffba1d50d12a537d00c6eb9320505a39f231f2c4c241d0b08b86cfa7ee489",
+			"license": "None",
+			"urls": [
+				"bzz-raw://416c73e2fc6df4bff99caf4b2a077119090ba084ffb0ade36609dbb2b548abc6",
+				"dweb:/ipfs/QmSPjBpn2jqq9smzK9dp3EVJezBT9bvyoSGNz31xTqPGS2"
+			]
+		}
+	},
+	"version": 1
+}
